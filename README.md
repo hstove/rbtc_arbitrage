@@ -1,26 +1,51 @@
 # RbtcArbitrage
 
-TODO: Write a gem description
+A Ruby gem for automating arbitrage between the MtGox and Bitstamp bitcoin exchanges.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'rbtc_arbitrage'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install rbtc_arbitrage
 
 ## Usage
 
-TODO: Write usage instructions here
+After installing the gem, simply run `rbtc` in the command line.
+
+#### Options
+
+- **Live**: whether you want to actually execute trades. You must have configured your API keys and bitcoin addresses through the following environment variables:
+	1. MTGOX_KEY
+	2. MTGOX_SECRET
+	2. MTGOX_ADDRESS
+	2. BITSTAMP_KEY
+	2. BITSTAMP_SECRET
+	3. BITSTAMP_ADDRESS
+	
+- **Cutoff**: the minimum profit percentage required to execute a trade. Defaults to **%2.00**.
+- **Volume**: The amount of bitcoins to trade per transaction. Defaults to **0.01** (the minimum transaction size).
+
+#### Examples
+
+	$ rbtc --live --cutoff 4
+	$ rbtc --cutoff 0.5
+	$ rbtc --cutoff 3 --volume 0.05
+	$ rbtc
+	
+The output will look like this:
+
+	07/08/2013 at 10:41AM
+	Retrieving market information and balances
+	Bitstamp: $74.0
+	MtGox: $76.89
+	buying 0.01 btc from Bitstamp for $0.74
+	selling 0.01 btc on MtGox for $0.76
+	profit: $0.02 (2.77%)
+
 
 ## Contributing
+
+### Pull Requests are welcome!
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
