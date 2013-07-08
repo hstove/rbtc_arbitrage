@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "mtgox"
   spec.add_dependency "bitstamp"
+  spec.add_dependency "thor"
 end
