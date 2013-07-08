@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'rbtc_arbitrage'
+RbtcArbitrage.trade
