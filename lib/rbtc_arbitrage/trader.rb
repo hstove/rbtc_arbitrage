@@ -1,27 +1,20 @@
 module RbtcArbitrage
   class Trader
-    attr_accessor :stamp, :mtgox, :paid, :received, :options, :percent
+    attr_accessor :stamp, :mtgox, :paid, :received, :options, :percent, :amount_to_buy
 
     def initialize options={}
       @stamp   = {}
       @mtgox   = {}
       @options = options
+      @options[:volume] ||= 0.01
+      @options[:cutoff] ||= 2
 
       self
     end
 
     def trade
-      if options[:live]
-        validate_env
-        get_balance
-      end
-
-      # puts "#{Time.now.strftime("%m/%d/%Y at %I:%M%p")}"
-      # puts "Retrieving market information and balances"
       fetch_prices
       log_info if options[:verbose]
-
-      
 
       if options[:cutoff] > percent
         raise SecurityError, "Exiting because real profit (#{percent.round(2)}%) is less than cutoff (#{options[:cutoff].round(2)}%)"
@@ -32,18 +25,20 @@ module RbtcArbitrage
       self
     end
 
-    private
-
     def execute_trade
+      validate_env
+      get_balance
       raise SecurityError, "--live flag is false. Not executing trade." unless options[:live]
-      puts "Balances:"
-      puts "stamp usd: $#{stamp[:usd].round(2)} btc: #{stamp[:usd].round(2)}"
-      puts "mtgox usd: $#{mtgox[:usd].round(2)} btc: #{mtgox[:usd].round(2)}"
+      if options[:verbose]
+        puts "Balances:"
+        puts "stamp usd: $#{stamp[:usd].round(2)} btc: #{stamp[:usd].round(2)}"
+        puts "mtgox usd: $#{mtgox[:usd].round(2)} btc: #{mtgox[:usd].round(2)}"
+      end
       if stamp[:price] < mtgox[:price]
         if paid > stamp[:usd] || amount_to_buy > mtgox[:btc]
           raise SecurityError, "Not enough funds. Exiting."
         else
-          puts "Trading live!"
+          puts "Trading live!" if options[:verbose]
           Bitstamp.orders.buy amount_to_buy, stamp[:price] + 0.001
           MtGox.sell! amount_to_buy, :market
           Bitstamp.transfer amount_to_buy, ENV['MTGOX_ADDRESS']
@@ -52,7 +47,7 @@ module RbtcArbitrage
         if paid > mtgox[:usd] || amount_to_buy > stamp[:btc]
           raise SecurityError, "Not enough funds. Exiting."
         else
-          puts "Trading live!"
+          puts "Trading live!" if options[:verbose]
           MtGox.buy! amount_to_buy, :market
           Bitstamp.orders.sell amount_to_buy, stamp[:price] - 0.001
           MtGox.withdraw amount_to_buy, ENV['BITSTAMP_ADDRESS']
@@ -61,7 +56,7 @@ module RbtcArbitrage
     end
 
     def fetch_prices
-      amount_to_buy = options[:volume]
+      @amount_to_buy = options[:volume]
       stamp[:price] = Bitstamp.ticker.ask.to_f
       mtgox[:price] = MtGox.ticker.buy
       prices = [stamp[:price], mtgox[:price]]
