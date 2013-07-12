@@ -57,8 +57,8 @@ module RbtcArbitrage
 
     def fetch_prices
       @amount_to_buy = options[:volume]
-      stamp[:price] = Bitstamp.ticker.ask.to_f
-      mtgox[:price] = MtGox.ticker.buy
+      stamp[:price] = Btce::Ticker.new("btc_usd").json["ticker"]["buy"]
+      mtgox[:price] = CampBX::API.new.xticker["Best Bid"]
       prices = [stamp[:price], mtgox[:price]]
       @paid = prices.min * 1.005 * amount_to_buy
       @received = prices.max * 0.994 * amount_to_buy
