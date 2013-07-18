@@ -2,6 +2,8 @@
 
 A Ruby gem for executing arbitrage between the MtGox and Bitstamp bitcoin exchanges.
 
+Donations accepted: **16BMcqf93eEpb2aWgMkJCSQQH85WzrpbdZ**
+
 [![Build Status](https://travis-ci.org/hstove/rbtc_arbitrage.png?branch=master)](https://travis-ci.org/hstove/rbtc_arbitrage)
 
 ## Installation
