@@ -60,8 +60,6 @@ module RbtcArbitrage
 
     def fetch_prices
       self.amount_to_buy = options[:volume]
-      # stamp[:price] = Btce::Ticker.new("btc_usd").json["ticker"]["buy"].to_f
-      # mtgox[:price] = CampBX::API.new.xticker["Best Bid"].to_f
       logger.info "Fetching exchange rates" if @options[:verbose]
       threads = [1,2].map do |n|
         Thread.new do
