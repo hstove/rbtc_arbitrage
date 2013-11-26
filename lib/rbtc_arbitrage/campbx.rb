@@ -61,7 +61,7 @@ module CampBX
       res = nil
 
       request = Net::HTTP::Get.new(uri.request_uri)
-      if auth then 
+      if auth then
         post_data.merge!({
           'user' => @username,
           'pass' => @password,

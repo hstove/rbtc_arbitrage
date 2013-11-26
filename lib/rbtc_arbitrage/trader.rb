@@ -5,9 +5,12 @@ module RbtcArbitrage
     def initialize options={}
       @stamp   = {}
       @mtgox   = {}
-      @options = options
-      @options[:volume] ||= 0.01
-      @options[:cutoff] ||= 2
+      @options = {}
+      @options[:volume] = options[:volume] || 0.01
+      @options[:cutoff] = options[:cutoff] || 2
+      @options[:logger] = options[:logger] || Logger.new(STDOUT)
+      @options[:verbose] = options[:verbose]
+      @option
 
       self
     end
@@ -30,15 +33,15 @@ module RbtcArbitrage
       get_balance
       raise SecurityError, "--live flag is false. Not executing trade." unless options[:live]
       if options[:verbose]
-        puts "Balances:"
-        puts "stamp usd: $#{stamp[:usd].round(2)} btc: #{stamp[:usd].round(2)}"
-        puts "mtgox usd: $#{mtgox[:usd].round(2)} btc: #{mtgox[:usd].round(2)}"
+        logger.info "Balances:"
+        logger.info "stamp usd: $#{stamp[:usd].round(2)} btc: #{stamp[:usd].round(2)}"
+        logger.info "mtgox usd: $#{mtgox[:usd].round(2)} btc: #{mtgox[:usd].round(2)}"
       end
       if stamp[:price] < mtgox[:price]
         if paid > stamp[:usd] || amount_to_buy > mtgox[:btc]
           raise SecurityError, "Not enough funds. Exiting."
         else
-          puts "Trading live!" if options[:verbose]
+          logger.info "Trading live!" if options[:verbose]
           Bitstamp.orders.buy amount_to_buy, stamp[:price] + 0.001
           MtGox.sell! amount_to_buy, :market
           Bitstamp.transfer amount_to_buy, ENV['MTGOX_ADDRESS']
@@ -47,7 +50,7 @@ module RbtcArbitrage
         if paid > mtgox[:usd] || amount_to_buy > stamp[:btc]
           raise SecurityError, "Not enough funds. Exiting."
         else
-          puts "Trading live!" if options[:verbose]
+          logger.info "Trading live!" if options[:verbose]
           MtGox.buy! amount_to_buy, :market
           Bitstamp.orders.sell amount_to_buy, stamp[:price] - 0.001
           MtGox.withdraw amount_to_buy, ENV['BITSTAMP_ADDRESS']
@@ -56,9 +59,27 @@ module RbtcArbitrage
     end
 
     def fetch_prices
-      @amount_to_buy = options[:volume]
-      stamp[:price] = Btce::Ticker.new("btc_usd").json["ticker"]["buy"]
-      mtgox[:price] = CampBX::API.new.xticker["Best Bid"]
+      self.amount_to_buy = options[:volume]
+      # stamp[:price] = Btce::Ticker.new("btc_usd").json["ticker"]["buy"].to_f
+      # mtgox[:price] = CampBX::API.new.xticker["Best Bid"].to_f
+      logger.info "Fetching exchange rates" if @options[:verbose]
+      threads = [1,2].map do |n|
+        Thread.new do
+          if n == 1
+            Thread.current[:output] = Bitstamp.ticker.ask.to_f
+          else
+            Thread.current[:output] = MtGox.ticker.buy
+          end
+        end
+      end
+      threads.each_with_index do |thread, i|
+        thread.join
+        if i == 0
+          stamp[:price] = thread[:output]
+        else
+          mtgox[:price] = thread[:output]
+        end
+      end
       prices = [stamp[:price], mtgox[:price]]
       @paid = prices.min * 1.005 * amount_to_buy
       @received = prices.max * 0.994 * amount_to_buy
@@ -66,12 +87,12 @@ module RbtcArbitrage
     end
 
     def log_info
-      puts "Bitstamp: $#{stamp[:price].round(2)}"
-      puts "MtGox: $#{mtgox[:price].round(2)}"
+      logger.info "Bitstamp: $#{stamp[:price].round(2)}"
+      logger.info "MtGox: $#{mtgox[:price].round(2)}"
       lower_ex, higher_ex = stamp[:price] < mtgox[:price] ? %w{Bitstamp, MtGox} : %w{MtGox, Bitstamp}
-      puts "buying #{amount_to_buy} btc from #{lower_ex} for $#{paid.round(2)}"
-      puts "selling #{amount_to_buy} btc on #{higher_ex} for $#{received.round(2)}"
-      puts "profit: $#{(received - paid).round(2)} (#{percent.round(2)}%)"
+      logger.info "buying #{amount_to_buy} btc from #{lower_ex} for $#{paid.round(2)}"
+      logger.info "selling #{amount_to_buy} btc on #{higher_ex} for $#{received.round(2)}"
+      logger.info "profit: $#{(received - paid).round(2)} (#{percent.round(2)}%)"
     end
 
     def validate_env
@@ -102,6 +123,10 @@ module RbtcArbitrage
       balances = Bitstamp.balance if options[:live]
       @stamp[:usd] = balances["usd_available"].to_f
       @stamp[:btc] = balances["btc_available"].to_f
+    end
+
+    def logger
+      @options[:logger]
     end
   end
 end
