@@ -64,9 +64,9 @@ module RbtcArbitrage
       threads = [1,2].map do |n|
         Thread.new do
           if n == 1
-            Thread.current[:output] = Bitstamp.ticker.ask.to_f
+            Thread.current[:output] = Btce::Ticker.new("btc_usd").json["ticker"]["buy"].to_f
           else
-            Thread.current[:output] = MtGox.ticker.buy
+            Thread.current[:output] = CampBX::API.new.xticker["Best Bid"].to_f
           end
         end
       end
