@@ -11,6 +11,6 @@ module RbtcArbitrage
     end
 
     default_task :trade
-    
+
   end
 end
