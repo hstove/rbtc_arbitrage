@@ -5,3 +5,7 @@ gemspec
 gem 'rspec'
 gem "activemodel", ">= 3.1"
 gem "activesupport", ">= 3.1"
+gem 'guard'
+gem 'guard-rspec'
+gem 'simplecov'
+gem 'coveralls', require: false
