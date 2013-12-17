@@ -2,6 +2,16 @@
 
 A Ruby gem for executing arbitrage between the MtGox and Bitstamp bitcoin exchanges.
 
+## Meta
+
+[Explanation of bitcoin arbitrage](http://hankstoever.com/posts/13-Everything-you-need-to-know-about-Bitcoin-arbitrage)
+
+[Why I open sourced a bitcoin arbitrate bot](http://hankstoever.com/posts/2-Why-I-open-sourced-a-bitcoin-arbitrage-bot)
+
+I'm also creating a course on [creating your own bitcoin arbitrage bot](https://uludum.org/funds/2) 
+
+Donations accepted: **16BMcqf93eEpb2aWgMkJCSQQH85WzrpbdZ**
+
 [![Build Status](https://travis-ci.org/hstove/rbtc_arbitrage.png?branch=master)](https://travis-ci.org/hstove/rbtc_arbitrage)
 [![Coverage Status](https://coveralls.io/repos/hstove/rbtc_arbitrage/badge.png)](https://coveralls.io/r/hstove/rbtc_arbitrage)
 [![Code Climate](https://codeclimate.com/github/hstove/rbtc_arbitrage.png)](https://codeclimate.com/github/hstove/rbtc_arbitrage)
