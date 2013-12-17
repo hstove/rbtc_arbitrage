@@ -1,13 +1,16 @@
 language: ruby
 rvm:
-  - 2.1.0
-  - 2.0.0
-  - 1.9.3
-  - 1.9.2
-  - jruby-18mode
-  - jruby-19mode
-  - rbx-2.1.1
-  - ruby-head
-  - jruby-head
-  - 1.8.7
-  - ree
+- 2.1.0
+- 2.0.0
+- 1.9.3
+- rbx-2.1.1
+- ruby-head
+env:
+  global:
+  - secure: FdoR9cSL5JzSiGRgmrEGCx55VdP7QU6jt2vzeJyc+2Ho67UXxJuXWgFdwojs6X85O3in8YfSOInBLGXXsD8a3mBuvhsAaMmDLbhFKfEExsc9bnpTj3k95UMGRO3pGNkk1tfj/ohsLFs+yL4r/mFZ5pOoxWW0uhYuRPA+Jk39hZg=
+  - secure: k8OmNupst65nssbCEYLnUdJdYvwnW6YUqcBCNOLcxXKRWcABf2RGmfI/T/iyO0uzzF6e9Ms3C9eZixfIXw4BVTY7DajKHicjvUMPMzzAwAqpK9fb2+mHUmNuksl8wjLvZB4j3TkAAxMECjpPQ2TvY1NRj375STUICC1Ahk9V6CU=
+  - secure: DTjDDBK+lKN6unPF1WOj8a/IIEcty4hkqeP2brilboAyKczxxuDkWcEY7q4mr1whzSQqnWgZgKH2my7mJwWm+J8DMW4bkD5se6eQtmHB/lXkIkIUxHdHT1KM5o+8MqMnb8PX7gquudeIGwNfI2yXa8Nh33y/fVCiKsMDg25Z8Es=
+  - secure: VDB+4rlwVZHOVDQanlAp/QD6owxd5RtiOCUC1H/NudyFqAeXUrn57FC8IN4f4s5Mk7mW9M7F7VYF2l4egjfVYszjq3OlUaWb5uMS7LSVl7I4rNaCM+pPA4vi7rlt6F0LqZoDJzNX7Md1SwIQjCBracRbpV3ZKL8GHh5yS3Ojk38=
+  - secure: ksmMGyDkwmIUkJIHzdrAld+GN2KEm9l8dtxZikoP7B9zRymhnPhImDfZHbByFV0DIZmNiUMFvNLIIpgznjpFdpcEjCbLQnfniKTscMyQZ1pvOesCyaPnSHBENRDsADFCG/TMeP5VXtUUL2k/eNIzHU0cVJT8JaEMdihPDy+mrO8=
+  - secure: I3rS8d84BoCsZo9c/PcY6F/GDThVu/rPKMjTUGHkbtWXVD8E809JxaWavu/+EesyUhn8dDGwMRUc+4d6gtk+QeQVOyLkkPIaCII4puJEHqdyJpqrJlsZbXaGO/JJ6mx2y0I6wDryKeLhZqVn6VdxycF+7OTqYdCFGV+o49wirIU=
+  - secure: kih2LqMwQDZErJFU4hslPZcAdtYwQIYyzxnkObIWtIQpLAVQNssbISLBe5ogWNXi8FyiEktAH5Yy0orjTp2ynmrA6rE6NU/vD3oBDeeI7CCd+13weeIW+uReyixuI5zn6zzJLHdxn+rUwowfdYrt9vF54uEjKCVL32pbLZjdavk=
