@@ -8,7 +8,7 @@ A Ruby gem for executing arbitrage between the MtGox and Bitstamp bitcoin exchan
 
 [Why I open sourced a bitcoin arbitrate bot](http://hankstoever.com/posts/2-Why-I-open-sourced-a-bitcoin-arbitrage-bot)
 
-I'm also creating a course on [creating your own bitcoin arbitrage bot](https://uludum.org/funds/2) 
+I'm also creating a course on [creating your own bitcoin arbitrage bot](https://www.uludum.org/funds/2) 
 
 Donations accepted: **16BMcqf93eEpb2aWgMkJCSQQH85WzrpbdZ**
 
