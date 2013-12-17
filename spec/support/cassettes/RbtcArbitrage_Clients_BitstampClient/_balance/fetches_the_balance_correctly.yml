@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/balance/
+    body:
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 17 Dec 2013 18:40:02 GMT
+      Server:
+      - Apache
+      Content-Language:
+      - en
+      Expires:
+      - Tue, 17 Dec 2013 18:40:02 GMT
+      Vary:
+      - Accept-Language
+      Cache-Control:
+      - max-age=0
+      Last-Modified:
+      - Tue, 17 Dec 2013 18:40:02 GMT
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - incap_ses_124_99025=/U1EcazP+UfdRdBvBoq4AYKasFIAAAAAdb3zOl4ewZCjqVwIQR8HRg==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=6To6TWWds1Vw9zhaItob8gAAAABgpcZ6AsnAXA2RDnqQ2T1z; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=MMLr1fRQQF+jMYOwRSsxz4GasFIAAAAAQUIPAAAAAABoL4fhNvllL6g2wd8gq/Zs;
+        expires=Thu, 17 Dec 2015 17:12:31 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 6-3497408-3497716 NNNY CT(200 202 0) RT(1387305600895 539) q(0 0 4 0) r(4
+        7) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"btc_reserved": "0", "fee": "0.5000", "btc_available": "0", "usd_reserved":
+        "0", "btc_balance": "0", "usd_balance": "0.00", "usd_available": "0.00"}'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 18:40:03 GMT
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/balance/
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 17 Dec 2013 18:40:03 GMT
+      Server:
+      - Apache
+      Content-Language:
+      - en
+      Expires:
+      - Tue, 17 Dec 2013 18:40:03 GMT
+      Vary:
+      - Accept-Language
+      Cache-Control:
+      - max-age=0
+      Last-Modified:
+      - Tue, 17 Dec 2013 18:40:03 GMT
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - incap_ses_124_99025=LlOzDxXjiiDdRdBvBoq4AYOasFIAAAAAjKStMu6sRoI8G9vBobzXaw==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=iC3WZwFDbyNNIFu9Itob8gAAAABlF1MNYf5CBe4QsTL4PfH8; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=MMLr1fRQQF+jMYOwRSsxz4GasFIAAAAAQUIPAAAAAABoL4fhNvllL6g2wd8gq/Zs;
+        expires=Thu, 17 Dec 2015 17:12:31 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 6-3498335-3498462 NNNY CT(193 217 0) RT(1387305602232 162) q(0 0 5 0) r(5
+        7) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"btc_reserved": "0", "fee": "0.5000", "btc_available": "0", "usd_reserved":
+        "0", "btc_balance": "0", "usd_balance": "0.00", "usd_available": "0.00"}'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 18:40:04 GMT
+recorded_with: VCR 2.7.0

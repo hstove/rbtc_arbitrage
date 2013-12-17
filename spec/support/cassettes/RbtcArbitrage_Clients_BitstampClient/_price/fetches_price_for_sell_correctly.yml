@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bitstamp.net/api/ticker/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 17 Dec 2013 18:52:06 GMT
+      Server:
+      - Apache
+      Content-Language:
+      - en
+      Expires:
+      - Tue, 17 Dec 2013 18:52:06 GMT
+      Vary:
+      - Accept-Language
+      Cache-Control:
+      - max-age=0
+      Last-Modified:
+      - Tue, 17 Dec 2013 18:52:06 GMT
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - incap_ses_124_99025=EG6NVFY4Zj3MANdvBoq4AVWdsFIAAAAAJ5HXgArrNoPSLKMXyrPmIA==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=BEeSMWMBHh4P8h8yItob8gAAAAByf4B7gSxAE4n9qUXQRygm; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=8DwVZBcRQHCx3jP6h7xR7VWdsFIAAAAAQUIPAAAAAAD2kz0IxzLs0UNgtTywlZwj;
+        expires=Thu, 17 Dec 2015 17:22:01 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 5-2963838-2963878 NNNY CT(195 201 0) RT(1387306325135 166) q(0 0 3 -1) r(3
+        6) U13
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"high": "750.00", "last": "715.00", "timestamp": "1387306318", "bid":
+        "715.00", "volume": "64331.27905889", "low": "612.51", "ask": "716.44"}'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 18:52:06 GMT
+recorded_with: VCR 2.7.0

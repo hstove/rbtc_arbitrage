@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.mtgox.com/api/1/BTCUSD/ticker
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - mtgox gem 1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.4
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Powered-By:
+      - PHP/5.5.4
+      Access-Control-Allow-Origin:
+      - '*'
+      Content-Length:
+      - '1387'
+      Cache-Control:
+      - public, max-age=27
+      Expires:
+      - Tue, 17 Dec 2013 18:41:04 GMT
+      Date:
+      - Tue, 17 Dec 2013 18:40:37 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":"success","return":{"high":{"value":"824.88888","value_int":"82488888","display":"$824.89","display_short":"$824.89","currency":"USD"},"low":{"value":"678.89040","value_int":"67889040","display":"$678.89","display_short":"$678.89","currency":"USD"},"avg":{"value":"741.06661","value_int":"74106661","display":"$741.07","display_short":"$741.07","currency":"USD"},"vwap":{"value":"738.12158","value_int":"73812158","display":"$738.12","display_short":"$738.12","currency":"USD"},"vol":{"value":"47976.69175988","value_int":"4797669175988","display":"47,976.69\u00a0BTC","display_short":"47,976.69\u00a0BTC","currency":"BTC"},"last_local":{"value":"746.00000","value_int":"74600000","display":"$746.00","display_short":"$746.00","currency":"USD"},"last_orig":{"value":"77000.000","value_int":"77000000","display":"\u00a577,000","display_short":"\u00a577,000","currency":"JPY"},"last_all":{"value":"747.69296","value_int":"74769296","display":"$747.69","display_short":"$747.69","currency":"USD"},"last":{"value":"746.00000","value_int":"74600000","display":"$746.00","display_short":"$746.00","currency":"USD"},"buy":{"value":"746.00000","value_int":"74600000","display":"$746.00","display_short":"$746.00","currency":"USD"},"sell":{"value":"749.40000","value_int":"74940000","display":"$749.40","display_short":"$749.40","currency":"USD"},"item":"BTC","now":"1387305632161184"}}'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 18:40:38 GMT
+recorded_with: VCR 2.7.0
