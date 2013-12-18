@@ -62,12 +62,7 @@ The output will look like this:
 
 ## Changelog
 
-### 2.0.0
-
-- full refactor
-- 100% test coverage
-- Modularized exchange-specific code to allow for easier extension.
-- CLI `buyer` and `seller` option.
+See [releases](https://github.com/hstove/rbtc_arbitrage/releases).
 
 ## Contributing
 
@@ -88,5 +83,6 @@ Right now there is support for only MtGox and Bitstamp, but adding support for o
 - `price`
 - `trade`
 - `exchange`
+- `transfer`
 
 Make sure that the methods accept the same arguments and return similar objects. At the same time, make sure you copy the [mtgox_cient_spec](https://github.com/hstove/rbtc_arbitrage/blob/master/spec/clients/mtgox_client_spec.rb) and change it to test your client.
