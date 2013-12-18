@@ -94,6 +94,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: nonce=1386979877064995
+    headers: {}
   response:
     status:
       code: 200
@@ -128,6 +129,9 @@ http_interactions:
 - request:
     method: post
     uri: https://www.bitstamp.net/api/balance/
+    body:
+      encoding: US-ASCII
+      string: ''
     headers: {}
   response:
     status:
@@ -206,4 +210,53 @@ http_interactions:
         "856.13", "volume": "11217.69441970", "low": "803.51", "ask": "856.14"}'
     http_version: 
   recorded_at: Mon, 16 Dec 2013 02:13:01 GMT
+- request:
+    method: get
+    uri: https://www.bitstamp.net/api/ticker/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Dec 2013 16:05:37 GMT
+      Server:
+      - Apache
+      Content-Language:
+      - en
+      Expires:
+      - Wed, 18 Dec 2013 16:05:37 GMT
+      Vary:
+      - Accept-Language
+      Cache-Control:
+      - max-age=0
+      Last-Modified:
+      - Wed, 18 Dec 2013 16:05:37 GMT
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - incap_ses_124_99025=fuP7FFvJnjp1j05zBoq4AdHHsVIAAAAArqmygbHRZCD82yqclcr33w==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=kr1fOzNQhRegQCrEItob8gAAAAAPQ9EmQddfssZX5Aa/29tG; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=iBN9Fa/uQ1WiZunAXUGle9HHsVIAAAAAQUIPAAAAAAARBsszfGccqoFxcirQiIvb;
+        expires=Thu, 17 Dec 2015 17:12:31 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 6-64948554-64948783 NNNY CT(194 193 0) RT(1387382736888 198) q(0 0 4 0) r(4
+        6) U13
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"high": "718.00", "last": "558.01", "timestamp": "1387382716", "bid":
+        "558.01", "volume": "116665.49784212", "low": "382.21", "ask": "560.00"}'
+    http_version: 
+  recorded_at: Wed, 18 Dec 2013 16:05:38 GMT
 recorded_with: VCR 2.7.0

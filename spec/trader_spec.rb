@@ -45,17 +45,6 @@ describe RbtcArbitrage::Trader do
     end
   end
 
-  # describe "#get_balance" do
-  #   it "fetches the right balance", :vcr do
-  #     trader.validate_env
-  #     balances = MtGox.balance
-  #     balance = RbtcArbitrage::Clients::MtGoxClient.new(:mtgox).balance
-  #     balance.should == [balances[0].amount.to_f, balances[1].amount.to_f]
-  #     balances = Bitstamp.balance
-  #     RbtcArbitrage::Client.new(:bitstamp).balance.should == [balances["usd_available"].to_f, balances["btc_available"].to_f]
-  #   end
-  # end
-
   describe "#initialize" do
     let(:options) {
       {

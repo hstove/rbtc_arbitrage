@@ -41,4 +41,12 @@ describe RbtcArbitrage::Clients::MtGoxClient do
       client.trade(:buy)
     end
   end
+
+  describe "#transfer" do
+    it "calls MtGox correctly" do
+      sell_client = RbtcArbitrage::Clients::BitstampClient.new
+      MtGox.should_receive(:withdraw!).with(0.01, sell_client.address)
+      client.transfer sell_client
+    end
+  end
 end

@@ -32,6 +32,10 @@ module RbtcArbitrage
       trade :sell
     end
 
+    def address
+      ENV["#{exchange.to_s.upcase}_ADDRESS"]
+    end
+
     private
 
     def set_key config, key, default

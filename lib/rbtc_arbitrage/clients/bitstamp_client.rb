@@ -43,6 +43,10 @@ module RbtcArbitrage
         }
         Bitstamp.orders.send(action, bitstamp_options)
       end
+
+      def transfer other_client
+        Bitstamp.transfer(@options[:volume], other_client.address)
+      end
     end
   end
 end

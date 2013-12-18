@@ -49,9 +49,6 @@ module RbtcArbitrage
           @buy_client.buy
           @sell_client.sell
           @buy_client.transfer @sell_client
-          # Bitstamp.orders.buy @options[:volume], buyer[:price] + 0.001
-          # MtGox.sell! @options[:volume], :market
-          # Bitstamp.transfer @options[:volume], ENV['MTGOX_ADDRESS']
         end
       else
         logger.info "Not trading live because cutoff is higher than profit." if @options[:verbose]
@@ -60,23 +57,8 @@ module RbtcArbitrage
 
     def fetch_prices
       logger.info "Fetching exchange rates" if @options[:verbose]
-      threads = [1,2].map do |n|
-        Thread.new do
-          if n == 1
-            Thread.current[:output] = @buy_client.price :buy
-          else
-            Thread.current[:output] = @sell_client.price :sell
-          end
-        end
-      end
-      threads.each_with_index do |thread, i|
-        thread.join
-        if i == 0
-          buyer[:price] = thread[:output]
-        else
-          seller[:price] = thread[:output]
-        end
-      end
+      buyer[:price] = @buy_client.price(:buy)
+      seller[:price] = @sell_client.price(:sell)
       prices = [buyer[:price], seller[:price]]
       @paid = prices.min * 1.005 * @options[:volume]
       @received = prices.max * 0.994 * @options[:volume]

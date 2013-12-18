@@ -36,6 +36,10 @@ module RbtcArbitrage
         action = "#{action.to_s}!".to_sym
         MtGox.send(action, @options[:volume], :market)
       end
+
+      def transfer other_client
+        MtGox.withdraw! @options[:volume], other_client.address
+      end
     end
   end
 end

@@ -42,4 +42,12 @@ describe RbtcArbitrage::Clients::BitstampClient do
       end
     end
   end
+
+  describe "#transfer" do
+    it "calls Bitstamp correctly" do
+      sell_client = RbtcArbitrage::Clients::MtGoxClient.new
+      Bitstamp.should_receive(:transfer).with(0.01, sell_client.address)
+      client.transfer sell_client
+    end
+  end
 end
