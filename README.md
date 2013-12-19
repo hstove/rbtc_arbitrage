@@ -40,7 +40,7 @@ After installing the gem, simply run `rbtc` in the command line.
 - **Cutoff**: the minimum profit percentage required to execute a trade. Defaults to **%2.00**.
 - **Volume**: The amount of bitcoins to trade per transaction. Defaults to **0.01** (the minimum transaction size).
 - **Buyer**: The exchange you'd like to buy bitcoins from during arbitrage. `"mtgox"` or `"bitstamp"`. Default is `bitstamp`
-- **Seller**: The exchange you'd like to sell bitcoins from during arbitrage. `"mtgox"` or `"bitstamp"`. Default is `bitstamp`
+- **Seller**: The exchange you'd like to sell bitcoins from during arbitrage. `"mtgox"` or `"bitstamp"`. Default is `mtgox`
 
 #### Examples
 
