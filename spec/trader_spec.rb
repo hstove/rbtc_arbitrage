@@ -43,6 +43,15 @@ describe RbtcArbitrage::Trader do
       trader.buyer[:price].should be_within(0.02).of(stamp_price)
       trader.seller[:price].should be_within(0.02).of(mtgox_price)
     end
+
+    it "calculates profit and percent accurately" do
+      trader.buy_client.stub(:price) { 10.5 }
+      trader.sell_client.stub(:price) { 10 }
+
+      trader.fetch_prices
+      trader.instance_variable_get(:@paid).should == (10.5 * 1.006 * 0.01)
+      trader.instance_variable_get(:@received).should == (10 * 0.994 * 0.01)
+    end
   end
 
   describe "#initialize" do
