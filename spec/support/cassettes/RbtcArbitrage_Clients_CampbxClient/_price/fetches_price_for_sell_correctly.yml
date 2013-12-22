@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://campbx.com/api/xticker.php
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Sun, 22 Dec 2013 20:54:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=ddfbcf00e20688eca7437a961caf31c281387745680288; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, must-revalidate, max-age=3600
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Sun, 22 Dec 2013 21:54:39 GMT
+      Cf-Ray:
+      - e0fb565c0b4012d
+    body:
+      encoding: UTF-8
+      string: '{"Last Trade":"629.99","Best Bid":"611.00","Best Ask":"634.49"}'
+    http_version: 
+  recorded_at: Sun, 22 Dec 2013 20:54:40 GMT
+recorded_with: VCR 2.7.0

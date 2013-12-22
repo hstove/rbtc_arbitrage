@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://campbx.com/api/myfunds.php
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Sun, 22 Dec 2013 20:52:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dcf93eb6010f388100750784fd2ba7ad51387745566048; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, must-revalidate, max-age=3600
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Sun, 22 Dec 2013 21:52:45 GMT
+      Cf-Ray:
+      - e0fb29b52190657
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"Total USD\":\"1.41\",\"Total BTC\":\"0.00790000\",\"Liquid USD\":\"1.41\",\"Liquid
+        BTC\":\"0.00790000\",\"Margin Account USD\":\"0.00\",\"Margin Account BTC\":\"0.00000000\"}"
+    http_version: 
+  recorded_at: Sun, 22 Dec 2013 20:52:46 GMT
+- request:
+    method: post
+    uri: https://campbx.com/api/myfunds.php
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Sun, 22 Dec 2013 20:52:47 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4b55f5f94eb19005616f2b37678ae4d31387745567323; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, must-revalidate, max-age=3600
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Sun, 22 Dec 2013 21:52:46 GMT
+      Cf-Ray:
+      - e0fb2a340cd012d
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"Total USD\":\"1.41\",\"Total BTC\":\"0.00790000\",\"Liquid USD\":\"1.41\",\"Liquid
+        BTC\":\"0.00790000\",\"Margin Account USD\":\"0.00\",\"Margin Account BTC\":\"0.00000000\"}"
+    http_version: 
+  recorded_at: Sun, 22 Dec 2013 20:52:47 GMT
+recorded_with: VCR 2.7.0

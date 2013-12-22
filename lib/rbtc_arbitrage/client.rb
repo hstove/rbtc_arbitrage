@@ -14,10 +14,9 @@ module RbtcArbitrage
       self
     end
 
-    def validate_keys
-      ["KEY", "SECRET", "ADDRESS"].each do |suffix|
-        prefix = exchange.to_s.upcase
-        key = "#{prefix}_#{suffix}"
+    def validate_keys *args
+      args.each do |key|
+        key = key.to_s.upcase
         if ENV[key].blank?
           raise ArgumentError, "Exiting because missing required ENV variable $#{key}."
         end
