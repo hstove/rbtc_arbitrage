@@ -60,8 +60,8 @@ module RbtcArbitrage
       buyer[:price] = @buy_client.price(:buy)
       seller[:price] = @sell_client.price(:sell)
       prices = [buyer[:price], seller[:price]]
-      @paid = prices.min * 1.005 * @options[:volume]
-      @received = prices.max * 0.994 * @options[:volume]
+      @paid = buyer[:price] * 1.006 * @options[:volume]
+      @received = seller[:price] * 0.994 * @options[:volume]
       @percent = ((received/@paid - 1) * 100).round(2)
     end
 
