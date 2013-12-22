@@ -25,6 +25,7 @@ describe RbtcArbitrage::Clients::MtGoxClient do
       MtGox.should_receive(:ticker) { hash }
       client.price(:sell)
 
+      client.instance_variable_set(:@price, nil)
       hash = Hashie::Mash.new(sell: 10)
       hash.should_receive(:sell)
       MtGox.should_receive(:ticker) { hash }

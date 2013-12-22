@@ -10,7 +10,7 @@ module RbtcArbitrage
       end
 
       def validate_env
-        validate_keys
+        validate_keys :bitstamp_key, :bitstamp_client_id, :bitstamp_secret
         Bitstamp.setup do |config|
           config.client_id = ENV["BITSTAMP_CLIENT_ID"]
           config.key = ENV["BITSTAMP_KEY"]

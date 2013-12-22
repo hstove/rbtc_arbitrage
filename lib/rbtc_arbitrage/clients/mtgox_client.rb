@@ -17,7 +17,7 @@ module RbtcArbitrage
       # Configures the MtGox
       # client's API keys.
       def validate_env
-        validate_keys
+        validate_keys :mtgox_key, :mtgox_secret, :mtgox_address
         MtGox.configure do |config|
           config.key = ENV["MTGOX_KEY"]
           config.secret = ENV["MTGOX_SECRET"]
