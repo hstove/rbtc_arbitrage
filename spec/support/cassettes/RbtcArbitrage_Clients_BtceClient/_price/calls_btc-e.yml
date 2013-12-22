@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://btc-e.com/api/2/btc_usd/ticker
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Sun, 22 Dec 2013 22:16:28 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d1f8cab4bb52538ed98053a854f645b891387750587941; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.btc-e.com; HttpOnly
+      X-Frame-Options:
+      - DENY
+      Expires:
+      - Thu, 01 Jan 1970 00:00:01 GMT
+      Cache-Control:
+      - no-cache
+      Cf-Ray:
+      - e102d36ad9f0293
+    body:
+      encoding: UTF-8
+      string: '{"ticker":{"high":659.99902,"low":572.09998,"avg":616.0495,"vol":14435222.43502,"vol_cur":23193.90705,"last":610.684,"buy":613.992,"sell":613.185,"updated":1387750587,"server_time":1387750588}}'
+    http_version: 
+  recorded_at: Sun, 22 Dec 2013 22:16:28 GMT
+- request:
+    method: get
+    uri: https://btc-e.com/api/2/btc_usd/ticker
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Sun, 22 Dec 2013 22:16:28 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d58ae9f8e9b973513f80e342b90bcbdb31387750588525; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.btc-e.com; HttpOnly
+      X-Frame-Options:
+      - DENY
+      Expires:
+      - Thu, 01 Jan 1970 00:00:01 GMT
+      Cache-Control:
+      - no-cache
+      Cf-Ray:
+      - e102d3a42aa0293
+    body:
+      encoding: UTF-8
+      string: '{"ticker":{"high":659.99902,"low":572.09998,"avg":616.0495,"vol":14435222.43502,"vol_cur":23193.90705,"last":610.684,"buy":613.992,"sell":613.185,"updated":1387750587,"server_time":1387750588}}'
+    http_version: 
+  recorded_at: Sun, 22 Dec 2013 22:16:28 GMT
+recorded_with: VCR 2.7.0

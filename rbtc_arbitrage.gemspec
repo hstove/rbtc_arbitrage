@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activemodel", ">= 3.1"
   spec.add_dependency "activesupport", ">= 3.1"
   spec.add_dependency "thor"
-  spec.add_dependency "btce"
+  spec.add_dependency "btce", '0.2.4'
   spec.add_dependency "bitstamp"
 end
