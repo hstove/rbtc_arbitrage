@@ -16,6 +16,7 @@ module RbtcArbitrage
       set_key opts, :logger, Logger.new(STDOUT)
       set_key opts, :verbose, true
       set_key opts, :live, false
+      set_key opts, :repeat, nil
       exchange = opts[:buyer] || :bitstamp
       @buy_client = client_for_exchange(exchange)
       exchange = opts[:seller] || :mtgox
@@ -31,13 +32,24 @@ module RbtcArbitrage
       fetch_prices
       log_info if options[:verbose]
 
-      if options[:cutoff] > @percent && options[:live]
+      if options[:live] && options[:cutoff] > @percent
         raise SecurityError, "Exiting because real profit (#{@percent.round(2)}%) is less than cutoff (#{options[:cutoff].round(2)}%)"
       end
 
       execute_trade if options[:live]
 
+      if @options[:repeat]
+        trade_again
+      end
       self
+    end
+
+    def trade_again
+      sleep @options[:repeat]
+      @logger.info " - " if @options[:verbose]
+      @buy_client = @buy_client.class.new(@options)
+      @sell_client = @sell_client.class.new(@options)
+      trade
     end
 
     def execute_trade

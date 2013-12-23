@@ -161,6 +161,14 @@ describe RbtcArbitrage::Trader do
       expect { trader.trade }.to raise_error(SecurityError)
     end
 
+    it "should repeat if specified" do
+      trader.options[:repeat] = 10
+      trader.should_receive(:fetch_prices)
+      trader.should_receive(:trade).and_call_original
+      trader.should_receive(:trade_again)
+      trader.trade
+    end
+
     it "calls #execute_trade if percent > cutoff" do
       trader.options[:live] = true
       trader.options[:cutoff] = 1
@@ -188,6 +196,33 @@ describe RbtcArbitrage::Trader do
 
   describe "#logger" do
     it { trader.logger.should == trader.options[:logger] }
+  end
+
+  describe "#trade_again" do
+    before(:each) { trader.options[:repeat] = 10 }
+
+    it "should call #trade" do
+      trader.should_receive(:sleep).with(10)
+      trader.should_receive(:trade)
+      trader.trade_again
+    end
+
+    it "should create new clients" do
+      buy_client = trader.buy_client
+      sell_client = trader.sell_client
+      trader.should_receive(:sleep)
+      trader.should_receive(:trade)
+      trader.trade_again
+      buy_client.should_not == trader.buy_client
+      sell_client.should_not == trader.sell_client
+    end
+  end
+
+  describe "#client_for_exchange" do
+    it "should raise if wrong market" do
+      error = "Invalid exchange - 'test'"
+      expect { trader.client_for_exchange(:test) }.to raise_error(ArgumentError, error)
+    end
   end
 
 end

@@ -8,6 +8,7 @@ module RbtcArbitrage
     option :verbose, type: :boolean, default: true, desc: "Whether you wish to log information."
     option :buyer, type: :string, default: "bitstamp"
     option :seller, type: :string, default: "mtgox"
+    option :repeat, type: :numeric, default: nil
     def trade
       RbtcArbitrage::Trader.new(options).trade
     end
