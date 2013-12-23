@@ -4,6 +4,8 @@ module RbtcArbitrage
     attr_accessor :buyer, :seller, :options
 
     def initialize config={}
+      config = config.to_hash
+      config.each { |k,v| config[k.to_sym] = v unless k.is_a?(Symbol) }
       @buyer   = {}
       @seller  = {}
       @options = {}
