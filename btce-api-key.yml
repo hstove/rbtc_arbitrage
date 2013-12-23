@@ -1,2 +1,0 @@
-key: #{ENV['BTCE_KEY']}
-secret: #{ENV['BTCE_SECRET']}
