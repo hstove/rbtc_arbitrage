@@ -55,4 +55,12 @@ describe RbtcArbitrage::Clients::CoinbaseClient do
       client.transfer(sell_client)
     end
   end
+
+  describe "#address" do
+    it "calls coinbase correctly" do
+      response = Hashie::Mash.new(address: "hi")
+      coinbase.should_receive(:receive_address) { response }
+      client.address
+    end
+  end
 end

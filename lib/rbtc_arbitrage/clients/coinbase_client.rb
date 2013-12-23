@@ -49,6 +49,11 @@ module RbtcArbitrage
         @interface ||= Coinbase::Client.new(ENV['COINBASE_KEY'])
       end
 
+      def address
+        puts 'method call'
+        @address ||= interface.receive_address.address
+      end
+
       private
 
       def max_float
