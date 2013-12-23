@@ -1,0 +1,215 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://coinbase.com/api/v1/prices/buy
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Dec 2013 01:50:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=ddaa6e4bf7ecb198302cf54b54705b1131387763401454; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
+      - request_method=GET; path=/; secure
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"21c3685567c83fb6123bfaa4d9ea14f5"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6f5e05003d57c4f27106b08346d40e92
+      X-Runtime:
+      - '0.231970'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - e11660a84d90296
+    body:
+      encoding: UTF-8
+      string: '{"subtotal":{"amount":"634.03","currency":"USD"},"fees":[{"coinbase":{"amount":"6.34","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"640.52","currency":"USD"},"amount":"640.52","currency":"USD"}'
+    http_version: 
+  recorded_at: Mon, 23 Dec 2013 01:50:01 GMT
+- request:
+    method: get
+    uri: https://coinbase.com/api/v1/prices/buy
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Dec 2013 01:50:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d599c599d9a0afa96ebc108372a7338501387763402504; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
+      - request_method=GET; path=/; secure
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"21c3685567c83fb6123bfaa4d9ea14f5"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8f1a06fc780cb3eff298c0e95b5b725b
+      X-Runtime:
+      - '0.458310'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - e11661132770296
+    body:
+      encoding: UTF-8
+      string: '{"subtotal":{"amount":"634.03","currency":"USD"},"fees":[{"coinbase":{"amount":"6.34","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"640.52","currency":"USD"},"amount":"640.52","currency":"USD"}'
+    http_version: 
+  recorded_at: Mon, 23 Dec 2013 01:50:02 GMT
+- request:
+    method: get
+    uri: https://coinbase.com/api/v1/prices/sell
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Dec 2013 01:50:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=da4ea8419396ce80064daee243fa1fa351387763403732; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
+      - request_method=GET; path=/; secure
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"a2bef70e39b2d17967c8ca9791524579"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 62d3d1b1273638380afc79bd0d9d2525
+      X-Runtime:
+      - '0.224874'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - e116618e67f0296
+    body:
+      encoding: UTF-8
+      string: '{"subtotal":{"amount":"632.52","currency":"USD"},"fees":[{"coinbase":{"amount":"6.33","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"626.04","currency":"USD"},"amount":"626.04","currency":"USD"}'
+    http_version: 
+  recorded_at: Mon, 23 Dec 2013 01:50:03 GMT
+- request:
+    method: get
+    uri: https://coinbase.com/api/v1/prices/sell
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Dec 2013 01:50:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3866b19f4121fd78614bbc73b874cb1a1387763405942; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
+      - request_method=GET; path=/; secure
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"a2bef70e39b2d17967c8ca9791524579"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dfbf6c7596d2b6f6de5078a8d29ad4f5
+      X-Runtime:
+      - '0.267502'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - e116626b2b10296
+    body:
+      encoding: UTF-8
+      string: '{"subtotal":{"amount":"632.52","currency":"USD"},"fees":[{"coinbase":{"amount":"6.33","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"626.04","currency":"USD"},"amount":"626.04","currency":"USD"}'
+    http_version: 
+  recorded_at: Mon, 23 Dec 2013 01:50:05 GMT
+recorded_with: VCR 2.8.0

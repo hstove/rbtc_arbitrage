@@ -25,6 +25,7 @@ describe RbtcArbitrage::Trader do
     RbtcArbitrage.clients.each do |client|
       describe client do
         keys = ["KEY", "SECRET"]
+        keys.pop if client.new.exchange == :coinbase
         keys << "ADDRESS" unless client.instance_methods(false).include?(:address)
         client = client.new
         prefix = client.exchange.to_s.upcase

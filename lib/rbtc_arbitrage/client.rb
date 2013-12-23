@@ -35,6 +35,10 @@ module RbtcArbitrage
       ENV["#{exchange.to_s.upcase}_ADDRESS"]
     end
 
+    def logger
+      @options[:logger]
+    end
+
     private
 
     def set_key config, key, default

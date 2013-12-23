@@ -4,19 +4,21 @@ module RbtcArbitrage
     attr_accessor :buyer, :seller, :options
 
     def initialize config={}
-      config = config.to_hash
-      config.each { |k,v| config[k.to_sym] = v unless k.is_a?(Symbol) }
+      opts = {}
+      config.each do |key, val|
+        opts[(key.to_sym rescue key) || key] = val
+      end
       @buyer   = {}
       @seller  = {}
       @options = {}
-      set_key config, :volume, 0.01
-      set_key config, :cutoff, 2
-      set_key config, :logger, Logger.new(STDOUT)
-      set_key config, :verbose, true
-      set_key config, :live, false
-      exchange = config[:buyer] || :bitstamp
+      set_key opts, :volume, 0.01
+      set_key opts, :cutoff, 2
+      set_key opts, :logger, Logger.new(STDOUT)
+      set_key opts, :verbose, true
+      set_key opts, :live, false
+      exchange = opts[:buyer] || :bitstamp
       @buy_client = client_for_exchange(exchange)
-      exchange = config[:seller] || :mtgox
+      exchange = opts[:seller] || :mtgox
       @sell_client = client_for_exchange(exchange)
       self
     end
