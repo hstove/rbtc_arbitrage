@@ -37,13 +37,18 @@ describe RbtcArbitrage::Clients::BtceClient do
   end
 
   describe "#balance" do
-    it "fetches the balance correctly", :vcr do
+    it "fetches the balance correctly" do
       balances = btce.get_info["return"]["funds"]
       expected = [balances["btc"], balances["usd"]]
       client.balance.should eql(expected)
       client.balance.each do |b|
         b.should be_a(Float)
       end
+    end
+
+    it "should raise if bad API keys", :vcr do
+      btce.unstub(:get_info)
+      expect { client.balance }.to raise_error(SecurityError)
     end
   end
 

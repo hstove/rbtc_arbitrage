@@ -9,8 +9,12 @@ module RbtcArbitrage
 
       def balance
         return @balance if @balance
-        balances = interface.get_info["return"]["funds"]
-        @balance = [balances["btc"], balances["usd"]]
+        begin
+          balances = interface.get_info["return"]["funds"]
+          @balance = [balances["btc"], balances["usd"]]
+        rescue NoMethodError => e
+          raise SecurityError, "Invalid API key for BTC-e"
+        end
       end
 
       def interface
