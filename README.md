@@ -12,7 +12,7 @@ I'm also creating a course on [creating your own bitcoin arbitrage bot](https://
 
 Donations accepted: **16BMcqf93eEpb2aWgMkJCSQQH85WzrpbdZ**
 
-[![Build Status](https://travis-ci.org/hstove/rbtc_arbitrage.png?branch=master)](https://travis-ci.org/hstove/rbtc_arbitrage)
+[![Build Status](https://travis-ci.org/hstove/rbtc_arbitrage.png?branch=no-native)](https://travis-ci.org/hstove/rbtc_arbitrage)
 [![Coverage Status](https://coveralls.io/repos/hstove/rbtc_arbitrage/badge.png)](https://coveralls.io/r/hstove/rbtc_arbitrage)
 [![Code Climate](https://codeclimate.com/github/hstove/rbtc_arbitrage.png)](https://codeclimate.com/github/hstove/rbtc_arbitrage)
 
