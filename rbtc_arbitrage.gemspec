@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rbtc_arbitrage/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rbtc_arbitrage"
+  spec.name          = "rbtc_arbitrage_simple"
   spec.version       = RbtcArbitrage::VERSION
   spec.authors       = ["Hank Stoever"]
   spec.email         = ["hstove@gmail.com"]
@@ -22,11 +22,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   spec.add_dependency "mtgox"
-  spec.add_dependency "bitstamp"
   spec.add_dependency "activemodel", ">= 3.1"
   spec.add_dependency "activesupport", ">= 3.1"
   spec.add_dependency "thor"
   spec.add_dependency "btce", '0.2.4'
-  spec.add_dependency "bitstamp"
   spec.add_dependency "coinbase", '1.2.4'
 end

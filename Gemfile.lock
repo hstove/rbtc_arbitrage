@@ -1,11 +1,9 @@
 PATH
   remote: .
   specs:
-    rbtc_arbitrage (1.2.3)
+    rbtc_arbitrage_simple (1.2.3)
       activemodel (>= 3.1)
       activesupport (>= 3.1)
-      bitstamp
-      bitstamp
       btce (= 0.2.4)
       coinbase (= 1.2.4)
       mtgox
@@ -25,11 +23,6 @@ GEM
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
     atomic (1.1.14)
-    bitstamp (0.3.0)
-      activemodel (>= 3.1)
-      activesupport (>= 3.1)
-      curb (> 0.8.1)
-      ruby-hmac (= 0.4.0)
     btce (0.2.4)
       monkey-patch
     builder (3.1.4)
@@ -51,7 +44,6 @@ GEM
       thor
     crack (0.4.1)
       safe_yaml (~> 0.9.0)
-    curb (0.8.5)
     diff-lcs (1.2.5)
     docile (1.1.1)
     faraday (0.8.8)
@@ -116,7 +108,6 @@ GEM
     rspec-mocks (3.0.0.beta1)
       rspec-support (= 3.0.0.beta1)
     rspec-support (3.0.0.beta1)
-    ruby-hmac (0.4.0)
     ruby_gntp (0.3.4)
     safe_yaml (0.9.7)
     simplecov (0.8.2)
@@ -156,7 +147,7 @@ DEPENDENCIES
   guard-rspec
   hashie
   rake
-  rbtc_arbitrage!
+  rbtc_arbitrage_simple!
   rspec
   ruby_gntp
   simplecov
