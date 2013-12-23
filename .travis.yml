@@ -1,9 +1,13 @@
 language: ruby
 rvm:
-- 2.1.0
-- 2.0.0
-- 1.9.3
-- ruby-head
+  - 2.1.0
+  - 2.0.0
+  - 1.9.3
+  - ruby-head
+  - jruby-18mode
+  - jruby-19mode
+  - rbx-2.1.1
+  - jruby-head
 env:
   global:
   - secure: FdoR9cSL5JzSiGRgmrEGCx55VdP7QU6jt2vzeJyc+2Ho67UXxJuXWgFdwojs6X85O3in8YfSOInBLGXXsD8a3mBuvhsAaMmDLbhFKfEExsc9bnpTj3k95UMGRO3pGNkk1tfj/ohsLFs+yL4r/mFZ5pOoxWW0uhYuRPA+Jk39hZg=
