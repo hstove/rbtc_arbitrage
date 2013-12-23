@@ -6,9 +6,9 @@ describe RbtcArbitrage::Trader do
     before :each do
       @old_keys = {}
       #clear env variables
-      ["KEY", "SECRET", "ADDRESS"].each do |suffix|
-        ["MTGOX", "BITSTAMP"].each do |prefix|
-          key      = "#{prefix}_#{suffix}"
+      ["KEY", "SECRET"].each do |suffix|
+        RbtcArbitrage.clients.each do |client_class|
+          key      = "#{client_class.new.exchange.to_s.upcase}_#{suffix}"
           @old_keys[key] = ENV[key]
           ENV[key] = nil
         end
@@ -22,13 +22,19 @@ describe RbtcArbitrage::Trader do
       end
     end
 
-    it "should raise errors when missing env variable" do
-      ["KEY", "SECRET", "ADDRESS"].each do |suffix|
-        key = "#{trader.sell_client.exchange.to_s.upcase}_#{suffix}"
-        expect { trader.sell_client.validate_env }.to raise_error(ArgumentError, "Exiting because missing required ENV variable $#{key}.")
-        ENV[key] = "some value"
+    RbtcArbitrage.clients.each do |client|
+      describe client do
+        keys = ["KEY", "SECRET"]
+        keys << "ADDRESS" unless client.instance_methods(false).include?(:address)
+        client = client.new
+        prefix = client.exchange.to_s.upcase
+        keys.each do |suffix|
+          key = "#{prefix}_#{suffix}"
+          it "should raise errors when missing env variable $#{key}" do
+            expect { client.validate_env }.to raise_error(ArgumentError)
+          end
+        end
       end
-      expect { trader.sell_client.validate_env }.not_to raise_error
     end
   end
 
