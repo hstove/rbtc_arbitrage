@@ -15,3 +15,4 @@ gem "webmock"
 gem 'vcr'
 gem 'codeclimate-test-reporter'
 gem 'hashie'
+gem 'sinatra'
