@@ -50,7 +50,6 @@ module RbtcArbitrage
       end
 
       def address
-        puts 'method call'
         @address ||= interface.receive_address.address
       end
 

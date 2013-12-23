@@ -100,8 +100,12 @@ module RbtcArbitrage
         clazz = RbtcArbitrage::Clients.const_get(c)
         clazz.new.exchange == market
       end
-      clazz = RbtcArbitrage::Clients.const_get(clazz)
-      clazz.new @options
+      begin
+        clazz = RbtcArbitrage::Clients.const_get(clazz)
+        clazz.new @options
+      rescue TypeError => e
+        raise ArgumentError, "Invalid exchange - '#{market}'"
+      end
     end
   end
 end
