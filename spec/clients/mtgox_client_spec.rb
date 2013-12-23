@@ -19,16 +19,12 @@ describe RbtcArbitrage::Clients::MtGoxClient do
       end
     end
 
-    it "calls MtGox" do
-      hash = Hashie::Mash.new(buy: 10)
-      hash.should_receive(:buy)
-      MtGox.should_receive(:ticker) { hash }
+    it "calls MtGox", :vcr do
+      MtGox::Ticker.any_instance.should_receive(:buy)
       client.price(:sell)
 
       client.instance_variable_set(:@price, nil)
-      hash = Hashie::Mash.new(sell: 10)
-      hash.should_receive(:sell)
-      MtGox.should_receive(:ticker) { hash }
+      MtGox::Ticker.any_instance.should_receive(:sell)
       client.price(:buy)
     end
   end

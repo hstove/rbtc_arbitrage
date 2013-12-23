@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.mtgox.com/api/1/BTCUSD/ticker
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - mtgox gem 1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.4
+      Content-Type:
+      - application/json; charset=utf-8
+      Access-Control-Allow-Origin:
+      - '*'
+      Content-Length:
+      - '1399'
+      Cache-Control:
+      - public, max-age=22
+      Expires:
+      - Mon, 23 Dec 2013 01:08:34 GMT
+      Date:
+      - Mon, 23 Dec 2013 01:08:12 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":"success","return":{"high":{"value":"700.00000","value_int":"70000000","display":"$700.00","display_short":"$700.00","currency":"USD"},"low":{"value":"615.00000","value_int":"61500000","display":"$615.00","display_short":"$615.00","currency":"USD"},"avg":{"value":"660.95451","value_int":"66095451","display":"$660.95","display_short":"$660.95","currency":"USD"},"vwap":{"value":"661.52406","value_int":"66152406","display":"$661.52","display_short":"$661.52","currency":"USD"},"vol":{"value":"11544.95617512","value_int":"1154495617512","display":"11,544.96\u00a0BTC","display_short":"11,544.96\u00a0BTC","currency":"BTC"},"last_local":{"value":"645.00000","value_int":"64500000","display":"$645.00","display_short":"$645.00","currency":"USD"},"last_orig":{"value":"473.12453","value_int":"47312453","display":"473.12\u00a0\u20ac","display_short":"473.12\u00a0\u20ac","currency":"EUR"},"last_all":{"value":"646.05155","value_int":"64605155","display":"$646.05","display_short":"$646.05","currency":"USD"},"last":{"value":"645.00000","value_int":"64500000","display":"$645.00","display_short":"$645.00","currency":"USD"},"buy":{"value":"644.00553","value_int":"64400553","display":"$644.01","display_short":"$644.01","currency":"USD"},"sell":{"value":"644.99999","value_int":"64499999","display":"$645.00","display_short":"$645.00","currency":"USD"},"item":"BTC","now":"1387760881922125"}}'
+    http_version: 
+  recorded_at: Mon, 23 Dec 2013 01:08:12 GMT
+- request:
+    method: get
+    uri: https://data.mtgox.com/api/1/BTCUSD/ticker
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - mtgox gem 1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.4
+      Content-Type:
+      - application/json; charset=utf-8
+      Access-Control-Allow-Origin:
+      - '*'
+      Content-Length:
+      - '1399'
+      Cache-Control:
+      - public, max-age=22
+      Expires:
+      - Mon, 23 Dec 2013 01:08:34 GMT
+      Date:
+      - Mon, 23 Dec 2013 01:08:12 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"result":"success","return":{"high":{"value":"700.00000","value_int":"70000000","display":"$700.00","display_short":"$700.00","currency":"USD"},"low":{"value":"615.00000","value_int":"61500000","display":"$615.00","display_short":"$615.00","currency":"USD"},"avg":{"value":"660.95451","value_int":"66095451","display":"$660.95","display_short":"$660.95","currency":"USD"},"vwap":{"value":"661.52406","value_int":"66152406","display":"$661.52","display_short":"$661.52","currency":"USD"},"vol":{"value":"11544.95617512","value_int":"1154495617512","display":"11,544.96\u00a0BTC","display_short":"11,544.96\u00a0BTC","currency":"BTC"},"last_local":{"value":"645.00000","value_int":"64500000","display":"$645.00","display_short":"$645.00","currency":"USD"},"last_orig":{"value":"473.12453","value_int":"47312453","display":"473.12\u00a0\u20ac","display_short":"473.12\u00a0\u20ac","currency":"EUR"},"last_all":{"value":"646.05155","value_int":"64605155","display":"$646.05","display_short":"$646.05","currency":"USD"},"last":{"value":"645.00000","value_int":"64500000","display":"$645.00","display_short":"$645.00","currency":"USD"},"buy":{"value":"644.00553","value_int":"64400553","display":"$644.01","display_short":"$644.01","currency":"USD"},"sell":{"value":"644.99999","value_int":"64499999","display":"$645.00","display_short":"$645.00","currency":"USD"},"item":"BTC","now":"1387760881922125"}}'
+    http_version: 
+  recorded_at: Mon, 23 Dec 2013 01:08:12 GMT
+recorded_with: VCR 2.7.0
