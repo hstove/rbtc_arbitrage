@@ -2,6 +2,52 @@
 http_interactions:
 - request:
     method: get
+    uri: https://campbx.com/api/xticker.php
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Dec 2013 16:50:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d58bd3f2a4b2e988c8550d909c806de761387817438029; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, must-revalidate, max-age=3600
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Mon, 23 Dec 2013 17:50:37 GMT
+      Cf-Ray:
+      - e168d4bad3d012d
+    body:
+      encoding: UTF-8
+      string: '{"Last Trade":"625.01","Best Bid":"625.01","Best Ask":"637.97"}'
+    http_version: 
+  recorded_at: Mon, 23 Dec 2013 16:50:37 GMT
+- request:
+    method: get
     uri: https://data.mtgox.com/api/1/BTCUSD/ticker
     body:
       encoding: US-ASCII
@@ -22,72 +68,21 @@ http_interactions:
       - nginx/1.4.4
       Content-Type:
       - application/json; charset=utf-8
-      X-Powered-By:
-      - PHP/5.5.4
       Access-Control-Allow-Origin:
       - '*'
       Content-Length:
       - '1377'
       Cache-Control:
-      - public, max-age=23
+      - public, max-age=21
       Expires:
-      - Fri, 13 Dec 2013 23:46:23 GMT
+      - Mon, 23 Dec 2013 16:50:59 GMT
       Date:
-      - Fri, 13 Dec 2013 23:46:00 GMT
+      - Mon, 23 Dec 2013 16:50:38 GMT
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"result":"success","return":{"high":{"value":"990.00000","value_int":"99000000","display":"$990.00","display_short":"$990.00","currency":"USD"},"low":{"value":"882.15864","value_int":"88215864","display":"$882.16","display_short":"$882.16","currency":"USD"},"avg":{"value":"929.35648","value_int":"92935648","display":"$929.36","display_short":"$929.36","currency":"USD"},"vwap":{"value":"930.71887","value_int":"93071887","display":"$930.72","display_short":"$930.72","currency":"USD"},"vol":{"value":"16658.49512372","value_int":"1665849512372","display":"16,658.50\u00a0BTC","display_short":"16,658.50\u00a0BTC","currency":"BTC"},"last_local":{"value":"933.00000","value_int":"93300000","display":"$933.00","display_short":"$933.00","currency":"USD"},"last_orig":{"value":"933.00000","value_int":"93300000","display":"$933.00","display_short":"$933.00","currency":"USD"},"last_all":{"value":"933.00000","value_int":"93300000","display":"$933.00","display_short":"$933.00","currency":"USD"},"last":{"value":"933.00000","value_int":"93300000","display":"$933.00","display_short":"$933.00","currency":"USD"},"buy":{"value":"923.01500","value_int":"92301500","display":"$923.02","display_short":"$923.02","currency":"USD"},"sell":{"value":"932.99500","value_int":"93299500","display":"$933.00","display_short":"$933.00","currency":"USD"},"item":"BTC","now":"1386978350330653"}}'
+      string: '{"result":"success","return":{"high":{"value":"685.99999","value_int":"68599999","display":"$686.00","display_short":"$686.00","currency":"USD"},"low":{"value":"630.00000","value_int":"63000000","display":"$630.00","display_short":"$630.00","currency":"USD"},"avg":{"value":"662.16460","value_int":"66216460","display":"$662.16","display_short":"$662.16","currency":"USD"},"vwap":{"value":"662.16864","value_int":"66216864","display":"$662.17","display_short":"$662.17","currency":"USD"},"vol":{"value":"12449.81724962","value_int":"1244981724962","display":"12,449.82\u00a0BTC","display_short":"12,449.82\u00a0BTC","currency":"BTC"},"last_local":{"value":"665.78999","value_int":"66578999","display":"$665.79","display_short":"$665.79","currency":"USD"},"last_orig":{"value":"665.78999","value_int":"66578999","display":"$665.79","display_short":"$665.79","currency":"USD"},"last_all":{"value":"665.78999","value_int":"66578999","display":"$665.79","display_short":"$665.79","currency":"USD"},"last":{"value":"665.78999","value_int":"66578999","display":"$665.79","display_short":"$665.79","currency":"USD"},"buy":{"value":"660.80021","value_int":"66080021","display":"$660.80","display_short":"$660.80","currency":"USD"},"sell":{"value":"665.78996","value_int":"66578996","display":"$665.79","display_short":"$665.79","currency":"USD"},"item":"BTC","now":"1387817429741903"}}'
     http_version: 
-  recorded_at: Fri, 13 Dec 2013 23:45:59 GMT
-- request:
-    method: get
-    uri: https://www.bitstamp.net/api/ticker/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Fri, 13 Dec 2013 23:46:01 GMT
-      Server:
-      - Apache
-      Content-Language:
-      - en
-      Expires:
-      - Fri, 13 Dec 2013 23:46:01 GMT
-      Vary:
-      - Accept-Language
-      Cache-Control:
-      - max-age=0
-      Last-Modified:
-      - Fri, 13 Dec 2013 23:46:01 GMT
-      Connection:
-      - close
-      Transfer-Encoding:
-      - chunked
-      Content-Type:
-      - application/json
-      Set-Cookie:
-      - incap_ses_124_99025=1AGJPcUZxAWETOnVAYq4ATmcq1IAAAAAsPOre1PyXZcqEJH1uY4Qfg==;
-        path=/; Domain=.bitstamp.net
-      - nlbi_99025=/DSMfH+W5Ew2ED96Itob8gAAAAAGzFr9JBde9Z+4ZeBXJbWF; path=/; Domain=.bitstamp.net
-      - visid_incap_99025=QgG3duHHS6OybwUjvo9t3Ticq1IAAAAAQUIPAAAAAABm3P8tzeXhQXHryTzg9Y1Y;
-        expires=Sun, 13 Dec 2015 10:19:32 GMT; path=/; Domain=.bitstamp.net
-      X-Iinfo:
-      - 5-187947047-187947137 NNNY CT(197 197 0) RT(1386978360501 172) q(0 0 4 0)
-        r(4 6) U6
-      X-Cdn:
-      - Incapsula
-    body:
-      encoding: ASCII-8BIT
-      string: '{"high": "920.42", "last": "883.00", "timestamp": "1386978349", "bid":
-        "879.36", "volume": "14666.53257818", "low": "850.00", "ask": "883.00"}'
-    http_version: 
-  recorded_at: Fri, 13 Dec 2013 23:46:00 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Mon, 23 Dec 2013 16:50:37 GMT
+recorded_with: VCR 2.8.0

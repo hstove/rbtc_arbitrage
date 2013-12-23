@@ -17,7 +17,7 @@ module RbtcArbitrage
       set_key opts, :verbose, true
       set_key opts, :live, false
       set_key opts, :repeat, nil
-      exchange = opts[:buyer] || :bitstamp
+      exchange = opts[:buyer] || :campbx
       @buy_client = client_for_exchange(exchange)
       exchange = opts[:seller] || :mtgox
       @sell_client = client_for_exchange(exchange)

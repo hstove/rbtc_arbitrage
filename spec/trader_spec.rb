@@ -41,7 +41,7 @@ describe RbtcArbitrage::Trader do
 
   describe "#fetch_prices" do
     it "gets the right price set", :vcr do
-      stamp_price = Bitstamp.ticker.ask.to_f
+      stamp_price = CampBX::API.new.xticker["Best Ask"].to_f
       mtgox_price = MtGox.ticker.buy
 
       trader.fetch_prices
@@ -69,7 +69,7 @@ describe RbtcArbitrage::Trader do
         logger: nil,
         verbose: false,
         live: true,
-        seller: :bitstamp,
+        seller: :btce,
         buyer: :mtgox,
       }
     }
@@ -86,7 +86,7 @@ describe RbtcArbitrage::Trader do
 
     it "sets the right exchanges" do
       trader.buy_client.should be_a(RbtcArbitrage::Clients::MtGoxClient)
-      trader.sell_client.should be_a(RbtcArbitrage::Clients::BitstampClient)
+      trader.sell_client.should be_a(RbtcArbitrage::Clients::BtceClient)
     end
 
   end

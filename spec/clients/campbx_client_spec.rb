@@ -51,7 +51,7 @@ describe RbtcArbitrage::Clients::CampbxClient do
 
   describe "#transfer" do
     it "calls CampBX correctly" do
-      sell_client = RbtcArbitrage::Clients::BitstampClient.new
+      sell_client = RbtcArbitrage::Clients::BtceClient.new
       campbx.should_receive(:send_btc).with(sell_client.address, 0.01)
       client.transfer sell_client
     end

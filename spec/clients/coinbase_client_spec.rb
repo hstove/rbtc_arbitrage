@@ -50,7 +50,7 @@ describe RbtcArbitrage::Clients::CoinbaseClient do
 
   describe "#transfer" do
     it "calls coinbase correctly" do
-      sell_client = RbtcArbitrage::Clients::BitstampClient.new
+      sell_client = RbtcArbitrage::Clients::BtceClient.new
       coinbase.should_receive(:send_money).with(sell_client.address, 0.01)
       client.transfer(sell_client)
     end

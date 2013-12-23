@@ -85,7 +85,7 @@ describe RbtcArbitrage::Clients::BtceClient do
   describe "#transfer" do
     it "calls CampBX correctly" do
       client.options[:verbose] = true
-      sell_client = RbtcArbitrage::Clients::BitstampClient.new
+      sell_client = RbtcArbitrage::Clients::BtceClient.new
       client.options[:logger].should_receive(:error)
       client.transfer(sell_client)
     end

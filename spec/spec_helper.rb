@@ -13,6 +13,7 @@ SimpleCov.start do
 end
 
 require 'bundler'
+require './lib/rbtc_arbitrage'
 Bundler.require
 
 VCR.configure do |c|

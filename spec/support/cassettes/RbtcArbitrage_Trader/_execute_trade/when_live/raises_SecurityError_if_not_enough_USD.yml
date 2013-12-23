@@ -3,9 +3,6 @@ http_interactions:
 - request:
     method: post
     uri: https://data.mtgox.com/api/1/generic/info
-    body:
-      encoding: US-ASCII
-      string: nonce=1386979416499181
   response:
     status:
       code: 200
@@ -15,66 +12,70 @@ http_interactions:
       - nginx/1.4.4
       Content-Type:
       - application/json; charset=utf-8
-      X-Powered-By:
-      - PHP/5.5.4
       Access-Control-Allow-Origin:
       - '*'
       Content-Length:
-      - '1731'
+      - '1732'
       Expires:
-      - Sat, 14 Dec 2013 00:03:38 GMT
+      - Mon, 23 Dec 2013 16:51:12 GMT
       Cache-Control:
       - max-age=0, no-cache, no-store
       Pragma:
       - no-cache
       Date:
-      - Sat, 14 Dec 2013 00:03:38 GMT
+      - Mon, 23 Dec 2013 16:51:12 GMT
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: '{"result":"success","return":{"Login":"heynk","Index":"141119","Id":"84fdd298-4386-4d7c-86c0-af74f2e0d0ec","Link":"M82141119X","Rights":["deposit","get_info","merchant","trade","withdraw"],"Language":"en_US","Created":"2012-04-07
-        13:52:16","Last_Login":"2013-10-15 20:52:29","Wallets":{"BTC":{"Balance":{"value":"0.00000133","value_int":"133","display":"0.00000133\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"},"Operations":1,"Daily_Withdraw_Limit":{"value":"100.00000000","value_int":"10000000000","display":"100.00000000\u00a0BTC","display_short":"100.00\u00a0BTC","currency":"BTC"},"Monthly_Withdraw_Limit":null,"Max_Withdraw":{"value":"100.00000000","value_int":"10000000000","display":"100.00000000\u00a0BTC","display_short":"100.00\u00a0BTC","currency":"BTC"},"Open_Orders":{"value":"0.00000000","value_int":"0","display":"0.00000000\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"}},"USD":{"Balance":{"value":"0.00000","value_int":"0","display":"$0.00000","display_short":"$0.00","currency":"USD"},"Operations":0,"Daily_Withdraw_Limit":{"value":"1000.00000","value_int":"100000000","display":"$1,000.00000","display_short":"$1,000.00","currency":"USD"},"Monthly_Withdraw_Limit":{"value":"10000.00000","value_int":"1000000000","display":"$10,000.00000","display_short":"$10,000.00","currency":"USD"},"Max_Withdraw":{"value":"1000.00000","value_int":"100000000","display":"$1,000.00000","display_short":"$1,000.00","currency":"USD"},"Open_Orders":{"value":"0.00000","value_int":"0","display":"$0.00000","display_short":"$0.00","currency":"USD"}}},"Monthly_Volume":{"value":"0.00000000","value_int":"0","display":"0.00000000\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"},"Trade_Fee":0.6}}'
+        13:52:16","Last_Login":"2013-10-15 20:52:29","Wallets":{"BTC":{"Balance":{"value":"0.00000133","value_int":"133","display":"0.00000133\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"},"Operations":1,"Daily_Withdraw_Limit":{"value":"100.00000000","value_int":"10000000000","display":"100.00000000\u00a0BTC","display_short":"100.00\u00a0BTC","currency":"BTC"},"Monthly_Withdraw_Limit":null,"Max_Withdraw":{"value":"100.00000000","value_int":"10000000000","display":"100.00000000\u00a0BTC","display_short":"100.00\u00a0BTC","currency":"BTC"},"Open_Orders":{"value":"0.00000000","value_int":"0","display":"0.00000000\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"}},"USD":{"Balance":{"value":"0.00000","value_int":"0","display":"$0.00000","display_short":"$0.00","currency":"USD"},"Operations":0,"Daily_Withdraw_Limit":{"value":"1000.00000","value_int":"100000000","display":"$1,000.00000","display_short":"$1,000.00","currency":"USD"},"Monthly_Withdraw_Limit":{"value":"10000.00000","value_int":"1000000000","display":"$10,000.00000","display_short":"$10,000.00","currency":"USD"},"Max_Withdraw":{"value":"1000.00000","value_int":"100000000","display":"$1,000.00000","display_short":"$1,000.00","currency":"USD"},"Open_Orders":{"value":"0.00000","value_int":"0","display":"$0.00000","display_short":"$0.00","currency":"USD"}}},"Monthly_Volume":{"value":"0.00000000","value_int":"0","display":"0.00000000\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"},"Trade_Fee":0.45}}'
     http_version: 
-  recorded_at: Sat, 14 Dec 2013 00:03:37 GMT
+  recorded_at: Mon, 23 Dec 2013 16:51:11 GMT
 - request:
     method: post
-    uri: https://www.bitstamp.net/api/balance/
-    headers: {}
+    uri: https://campbx.com/api/myfunds.php
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sat, 14 Dec 2013 00:03:39 GMT
       Server:
-      - Apache
-      Content-Language:
-      - en
-      Expires:
-      - Sat, 14 Dec 2013 00:03:39 GMT
-      Vary:
-      - Accept-Language
-      Cache-Control:
-      - max-age=0
-      Last-Modified:
-      - Sat, 14 Dec 2013 00:03:39 GMT
-      Connection:
-      - close
-      Transfer-Encoding:
-      - chunked
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Dec 2013 16:51:13 GMT
       Content-Type:
       - application/json
-      X-Iinfo:
-      - 5-188432674-188432763 NNNY CT(195 195 0) RT(1386979419006 170) q(0 0 4 -1)
-        r(4 7) U6
-      X-Cdn:
-      - Incapsula
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d10f5ac004a9165ef621716bc76b652ca1387817472922; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, must-revalidate, max-age=3600
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Mon, 23 Dec 2013 17:51:12 GMT
+      Cf-Ray:
+      - e168e254197012d
     body:
-      encoding: ASCII-8BIT
-      string: '{"btc_reserved": "0", "fee": "0.5000", "btc_available": "0", "usd_reserved":
-        "0", "btc_balance": "0", "usd_balance": "0.00", "usd_available": "0.00"}'
+      encoding: UTF-8
+      string: "\r\n{\"Total USD\":\"1.41\",\"Total BTC\":\"0.00790000\",\"Liquid USD\":\"1.41\",\"Liquid
+        BTC\":\"0.00790000\",\"Margin Account USD\":\"0.00\",\"Margin Account BTC\":\"0.00000000\"}"
     http_version: 
-  recorded_at: Sat, 14 Dec 2013 00:03:38 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Mon, 23 Dec 2013 16:51:12 GMT
+recorded_with: VCR 2.8.0
