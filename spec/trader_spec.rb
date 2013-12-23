@@ -1,6 +1,6 @@
 require 'spec_helper'
 describe RbtcArbitrage::Trader do
-  let(:trader) { RbtcArbitrage::Trader.new(verbose: false) }
+  let(:trader) { RbtcArbitrage::Trader.new({:verbose => false}) }
   describe "#validate_env" do
 
     before :each do
@@ -63,13 +63,13 @@ describe RbtcArbitrage::Trader do
   describe "#initialize" do
     let(:options) {
       {
-        volume: 1,
-        cutoff: 1,
-        logger: nil,
-        verbose: false,
-        live: true,
-        seller: :bitstamp,
-        buyer: :mtgox,
+        :volume => 1,
+        :cutoff => 1,
+        :logger => nil,
+        :verbose => false,
+        :live => true,
+        :seller => :bitstamp,
+        :buyer => :mtgox,
       }
     }
 
@@ -96,7 +96,7 @@ describe RbtcArbitrage::Trader do
     end
 
     context "when live" do
-      let(:trader) { RbtcArbitrage::Trader.new(verbose: false, cutoff: 100, live: true) }
+      let(:trader) { RbtcArbitrage::Trader.new({:verbose => false, :cutoff => 100, :live => true}) }
 
       it "shouldn't raise security error", :vcr do
         expect { trader.execute_trade }.not_to raise_error

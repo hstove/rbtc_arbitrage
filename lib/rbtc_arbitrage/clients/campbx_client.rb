@@ -30,8 +30,8 @@ module RbtcArbitrage
       def price action
         return @price if @price
         action = {
-          buy: "Best Ask",
-          sell: "Best Bid",
+          :buy => "Best Ask",
+          :sell => "Best Bid",
         }[action]
         @price = interface.xticker[action].to_f
       end

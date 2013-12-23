@@ -33,10 +33,10 @@ describe RbtcArbitrage::Clients::BitstampClient do
       it "trades on Bitstamp with #{action}" do
         client.instance_variable_set("@price", 1)
         trade_price = {
-          buy: 1.001,
-          sell: 0.999,
+          :buy => 1.001,
+          :sell => 0.999,
         }[action]
-        bitstamp_options = {amount: 0.01, price: trade_price}
+        bitstamp_options = {:amount => 0.01, :price => trade_price}
         Bitstamp.orders.should_receive(action).with(bitstamp_options)
         client.trade(action)
       end

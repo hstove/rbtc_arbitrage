@@ -7,4 +7,4 @@ RSpec::Core::RakeTask.new do |t|
   # Put spec opts in a file named .rspec in root
 end
 
-task default: :spec
+task :default => :spec

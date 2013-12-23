@@ -33,8 +33,8 @@ module RbtcArbitrage
       def price action
         return @price if @price
         action = {
-          buy: :sell,
-          sell: :buy,
+          :buy => :sell,
+          :sell => :buy,
         }[action]
         @price = MtGox.ticker.send(action)
       end

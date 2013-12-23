@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe RbtcArbitrage::Clients::BtceClient do
-  let(:client) { RbtcArbitrage::Clients::BtceClient.new(verbose: false) }
+  let(:client) { RbtcArbitrage::Clients::BtceClient.new({:verbose => false}) }
   let(:btce) { client.interface }
 
   it { client.exchange.should == :btce }
@@ -71,7 +71,7 @@ describe RbtcArbitrage::Clients::BtceClient do
       client.stub(:gets) { 'accept' }
 
       client.instance_variable_set(:@ticker, {"sell" => 10, "buy" => 11})
-      opts = {pair: "btc_usd", type: :sell, rate: 10, amount: 0.01}
+      opts = {:pair => "btc_usd", :type => :sell, :rate => 10, :amount => 0.01}
       btce.should_receive(:trade).with(opts)
       client.trade(:sell)
 

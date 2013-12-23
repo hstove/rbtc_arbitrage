@@ -25,8 +25,8 @@ module RbtcArbitrage
       def price action
         return @price if @price
         action = {
-          buy: :ask,
-          sell: :bid,
+          :buy => :ask,
+          :sell => :bid,
         }[action]
         @price = Bitstamp.ticker.send(action).to_f
       end
@@ -34,12 +34,12 @@ module RbtcArbitrage
       def trade action
         price(action) unless @price #memoize
         multiple = {
-          buy: 1,
-          sell: -1,
+          :buy => 1,
+          :sell => -1,
         }[action]
         bitstamp_options = {
-          price: (@price + 0.001 * multiple),
-          amount: @options[:volume],
+          :price => (@price + 0.001 * multiple),
+          :amount => @options[:volume],
         }
         Bitstamp.orders.send(action, bitstamp_options)
       end

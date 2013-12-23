@@ -31,10 +31,10 @@ module RbtcArbitrage
         @options[:logger].warn warning if @options[:verbose]
         return false unless gets.chomp == "accept"
         opts = {
-          type: action,
-          rate: price(action),
-          amount: @options[:volume],
-          pair: "btc_usd"
+          :type => action,
+          :rate => price(action),
+          :amount => @options[:volume],
+          :pair => "btc_usd"
         }
         interface.trade opts
       end
@@ -54,7 +54,7 @@ module RbtcArbitrage
       end
 
       def interface
-        opts = {key: ENV['BTCE_KEY'], secret: ENV['BTCE_SECRET']}
+        opts = {:key => ENV['BTCE_KEY'], :secret => ENV['BTCE_SECRET']}
         @interface ||= Btce::TradeAPI.new(opts)
       end
     end
