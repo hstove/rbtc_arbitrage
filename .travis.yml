@@ -4,6 +4,11 @@ rvm:
 - 2.0.0
 - 1.9.3
 - ruby-head
+
+matrix:
+  allow_failures:
+    - rvm: 2.1.0
+    - rvm: ruby-head
 env:
   global:
   - secure: FdoR9cSL5JzSiGRgmrEGCx55VdP7QU6jt2vzeJyc+2Ho67UXxJuXWgFdwojs6X85O3in8YfSOInBLGXXsD8a3mBuvhsAaMmDLbhFKfEExsc9bnpTj3k95UMGRO3pGNkk1tfj/ohsLFs+yL4r/mFZ5pOoxWW0uhYuRPA+Jk39hZg=
