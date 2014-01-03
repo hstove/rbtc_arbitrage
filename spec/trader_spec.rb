@@ -282,7 +282,7 @@ describe RbtcArbitrage::Trader do
     end
     it "sets up pony correctly" do
       opts = {
-        from: "info@uludum.org",
+        from: "info@example.org",
         subject: "rbtc_arbitrage notification",
         :via => :smtp,
         :via_options => {

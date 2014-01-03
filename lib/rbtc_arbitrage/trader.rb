@@ -147,7 +147,7 @@ module RbtcArbitrage
 
     def setup_pony
       Pony.options = {
-        from: "info@uludum.org",
+        from: ENV['FROM_EMAIL'] || "info@example.org",
         subject: "rbtc_arbitrage notification",
         via: :smtp,
         via_options: {
