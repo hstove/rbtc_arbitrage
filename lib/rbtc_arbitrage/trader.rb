@@ -50,7 +50,7 @@ module RbtcArbitrage
 
     def trade_again
       sleep @options[:repeat]
-      @logger.info " - " if @options[:verbose]
+      logger.info " - " if @options[:verbose]
       @buy_client = @buy_client.class.new(@options)
       @sell_client = @sell_client.class.new(@options)
       trade
@@ -167,13 +167,24 @@ module RbtcArbitrage
       higher_ex = @sell_client.exchange.to_s.capitalize
       <<-eos
       Update from your friendly rbtc_arbitrage trader:
+
+      -------------------
+
       #{lower_ex}: $#{buyer[:price].round(2)}
       #{higher_ex}: $#{seller[:price].round(2)}
       buying #{@options[:volume]} btc from #{lower_ex} for $#{@paid.round(2)}
       selling #{@options[:volume]} btc on #{higher_ex} for $#{@received.round(2)}
       profit: $#{(@received - @paid).round(2)} (#{@percent.round(2)}%)
 
-      options
+      -------------------
+
+      options:
+
+      #{options.reject{|k,v| v.is_a?(Logger)}.collect{|k,v| "#{k}: #{v.to_s}"}.join(" | ")}
+
+      -------------------
+
+      https://github.com/hstove/rbtc_arbitrage
       eos
     end
   end

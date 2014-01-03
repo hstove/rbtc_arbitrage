@@ -314,6 +314,9 @@ describe RbtcArbitrage::Trader do
       value.should include("$3.0")
       value.should include("3.0%")
     end
+    context "--live" do
+      it "should say that it made a trade"
+    end
   end
 
 end
