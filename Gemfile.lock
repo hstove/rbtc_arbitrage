@@ -9,6 +9,7 @@ PATH
       btce (= 0.2.4)
       coinbase (= 1.2.4)
       mtgox
+      pony
       thor
 
 GEM
@@ -78,6 +79,10 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     lumberjack (1.0.4)
+    mail (2.2.7)
+      activesupport (>= 2.3.6)
+      mime-types
+      treetop (>= 1.4.5)
     method_source (0.8.2)
     mime-types (2.0)
     minitest (4.7.5)
@@ -91,6 +96,9 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
+    polyglot (0.3.3)
+    pony (1.6.2)
+      mail (>= 2.0)
     pry (0.9.12.4)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -137,6 +145,9 @@ GEM
     tilt (1.4.1)
     timers (1.1.0)
     tins (0.13.1)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
     tzinfo (0.3.38)
     vcr (2.8.0)
     webmock (1.16.1)
