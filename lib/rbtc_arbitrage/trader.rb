@@ -17,6 +17,7 @@ module RbtcArbitrage
       set_key opts, :verbose, true
       set_key opts, :live, false
       set_key opts, :repeat, nil
+      set_key opts, :notify, false
       exchange = opts[:buyer] || :bitstamp
       @buy_client = client_for_exchange(exchange)
       exchange = opts[:seller] || :mtgox
@@ -38,9 +39,12 @@ module RbtcArbitrage
 
       execute_trade if options[:live]
 
+      notify
+
       if @options[:repeat]
         trade_again
       end
+
       self
     end
 
@@ -104,6 +108,15 @@ module RbtcArbitrage
       [@sell_client, @buy_client].each do |client|
         client.validate_env
       end
+      if options[:notify]
+        ["PASSWORD","USERNAME","EMAIL"].each do |key|
+          key = "SENDGRID_#{key}"
+          unless ENV[key]
+            raise ArgumentError, "Exiting because missing required ENV variable $#{key}."
+          end
+        end
+        setup_pony
+      end
     end
 
     def client_for_exchange market
@@ -118,6 +131,51 @@ module RbtcArbitrage
       rescue TypeError => e
         raise ArgumentError, "Invalid exchange - '#{market}'"
       end
+    end
+
+    def notify
+      puts 'called'
+      return false unless options[:notify]
+      puts @percent
+      return false unless @percent > options[:cutoff]
+
+      options[:logger].info "Sending email to #{ENV['SENDGRID_EMAIL']}"
+      Pony.mail({
+        body: notification,
+        to: ENV['SENDGRID_EMAIL'],
+      })
+    end
+
+    def setup_pony
+      Pony.options = {
+        from: "info@uludum.org",
+        subject: "rbtc_arbitrage notification",
+        via: :smtp,
+        via_options: {
+          address: 'smtp.sendgrid.net',
+          port: '587',
+          domain: 'heroku.com',
+          user_name: ENV['SENDGRID_USERNAME'],
+          password: ENV['SENDGRID_PASSWORD'],
+          authentication: :plain,
+          enable_starttls_auto: true
+        }
+      }
+    end
+
+    def notification
+      lower_ex = @buy_client.exchange.to_s.capitalize
+      higher_ex = @sell_client.exchange.to_s.capitalize
+      <<-eos
+      Update from your friendly rbtc_arbitrage trader:
+      #{lower_ex}: $#{buyer[:price].round(2)}
+      #{higher_ex}: $#{seller[:price].round(2)}
+      buying #{@options[:volume]} btc from #{lower_ex} for $#{@paid.round(2)}
+      selling #{@options[:volume]} btc on #{higher_ex} for $#{@received.round(2)}
+      profit: $#{(@received - @paid).round(2)} (#{@percent.round(2)}%)
+
+      options
+      eos
     end
   end
 end

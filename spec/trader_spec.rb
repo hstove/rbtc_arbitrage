@@ -37,6 +37,20 @@ describe RbtcArbitrage::Trader do
         end
       end
     end
+
+    ["PASSWORD","USERNAME","EMAIL"].each do |key|
+      key = "SENDGRID_#{key}"
+      it "should raise if --notify and not ENV[#{key}]" do
+        trader.sell_client.stub(:validate_env)
+        trader.buy_client.stub(:validate_env)
+        old_val = ENV[key]
+        ENV[key] = nil
+        trader.options[:notify] = true
+        expect { trader.validate_env }.to raise_error(ArgumentError)
+        trader.options[:notify] = false
+        expect { trader.validate_env }.not_to raise_error
+      end
+    end
   end
 
   describe "#fetch_prices" do
@@ -71,6 +85,7 @@ describe RbtcArbitrage::Trader do
         live: true,
         seller: :bitstamp,
         buyer: :mtgox,
+        notify: true,
       }
     }
 
@@ -142,6 +157,7 @@ describe RbtcArbitrage::Trader do
   describe "#trade" do
     it "calls the right methods" do
       trader.should_receive(:fetch_prices)
+      trader.should_receive(:notify)
       trader.should_not_receive(:log_info)
       trader.should_not_receive(:execute_trade)
 
@@ -222,6 +238,78 @@ describe RbtcArbitrage::Trader do
     it "should raise if wrong market" do
       error = "Invalid exchange - 'test'"
       expect { trader.client_for_exchange(:test) }.to raise_error(ArgumentError, error)
+    end
+  end
+
+  describe "#notify" do
+    it "returns false when notify == false" do
+      trader.notify.should == false
+    end
+
+    it "returns false unless cutoff < percent" do
+      trader.options[:notify] = true
+      trader.instance_variable_set :@percent, 1
+      trader.notify.should == false
+    end
+
+    it "calls Sendgrid when notify == true" do
+      trader.options[:notify] = true
+      trader.instance_variable_set :@percent, 3
+      trader.instance_variable_set :@paid, 5
+      trader.instance_variable_set :@received, 6
+      trader.buyer[:price] = 1
+      trader.seller[:price] = 1
+
+      trader.options[:logger].should_receive(:info)
+      Pony.should_receive(:mail)
+
+      trader.notify
+    end
+  end
+
+  describe "#setup_pony" do
+    it "gets called on validation when --notify" do
+      ["PASSWORD","USERNAME","EMAIL"].each do |key|
+        key = "SENDGRID_#{key}"
+        ENV[key] ||= "something"
+      end
+      trader.options[:notify] = true
+      trader.should_receive(:setup_pony).once
+      trader.validate_env
+    end
+    it "sets up pony correctly" do
+      opts = {
+        from: "info@uludum.org",
+        subject: "rbtc_arbitrage notification",
+        :via => :smtp,
+        :via_options => {
+          :address => 'smtp.sendgrid.net',
+          :port => '587',
+          :domain => 'heroku.com',
+          :user_name => ENV['SENDGRID_USERNAME'],
+          :password => ENV['SENDGRID_PASSWORD'],
+          :authentication => :plain,
+          :enable_starttls_auto => true
+        }
+      }
+      Pony.should_receive(:options=).with(opts)
+      trader.setup_pony
+    end
+  end
+
+  describe "#notification" do
+    it "includes the right values" do
+      trader.instance_variable_set :@percent, 3
+      trader.instance_variable_set :@paid, 5
+      trader.instance_variable_set :@received, 8
+      trader.buyer[:price] = 1.00453
+      trader.seller[:price] = 3.50453
+
+      value = trader.notification
+      value.should include("$1.0")
+      value.should include("$3.5")
+      value.should include("$3.0")
+      value.should include("3.0%")
     end
   end
 
