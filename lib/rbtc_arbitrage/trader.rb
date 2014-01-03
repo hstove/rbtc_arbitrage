@@ -134,10 +134,9 @@ module RbtcArbitrage
     end
 
     def notify
-      puts 'called'
       return false unless options[:notify]
-      puts @percent
       return false unless @percent > options[:cutoff]
+      setup_pony
 
       options[:logger].info "Sending email to #{ENV['SENDGRID_EMAIL']}"
       Pony.mail({

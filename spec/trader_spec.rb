@@ -261,7 +261,10 @@ describe RbtcArbitrage::Trader do
       trader.seller[:price] = 1
 
       trader.options[:logger].should_receive(:info)
-      Pony.should_receive(:mail)
+      Pony.should_receive(:mail).with({
+        to: ENV['SENDGRID_EMAIL'],
+        body: trader.notification,
+      })
 
       trader.notify
     end
