@@ -9,6 +9,7 @@ module RbtcArbitrage
     option :buyer, type: :string, default: "campbx"
     option :seller, type: :string, default: "mtgox"
     option :repeat, type: :numeric, default: nil
+    option :notify, type: :boolean, default: false
     def trade
       RbtcArbitrage::Trader.new(options).trade
     end
