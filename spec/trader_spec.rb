@@ -212,6 +212,7 @@ describe RbtcArbitrage::Trader do
     end
 
     it "formats the log correctly" do
+      FileUtils.mkdir_p('tmp')
       date = DateTime.now.strftime "%^b %e %Y %l"
       logger = Logger.new('tmp/log.info')
       logger.datetime_format = trader.logger.datetime_format
