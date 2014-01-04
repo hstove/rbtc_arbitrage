@@ -199,14 +199,27 @@ describe RbtcArbitrage::Trader do
   end
 
   describe "#log_info" do
-    it "calls logger.info" do
+    before :each do
       trader.buyer[:price] = 1
       trader.seller[:price] = 1
       trader.instance_variable_set :@percent, 1
       trader.instance_variable_set :@paid, 1
       trader.instance_variable_set :@received, 1
+    end
+    it "calls logger.info" do
       trader.logger.should_receive(:info).exactly(5).times
       trader.log_info
+    end
+
+    it "formats the log correctly" do
+      date = DateTime.now.strftime "%^b %e %Y %l"
+      logger = Logger.new('tmp/log.info')
+      logger.datetime_format = trader.logger.datetime_format
+      trader.options[:logger] = logger
+      trader.log_info
+      contents = File.read("tmp/log.info")
+      contents.should include(date)
+      contents.should include(" INFO -- ")
     end
   end
 
