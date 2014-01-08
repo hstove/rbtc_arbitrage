@@ -1,13 +1,14 @@
 PATH
   remote: .
   specs:
-    rbtc_arbitrage (1.4.4)
+    rbtc_arbitrage (1.4.5)
       activemodel (>= 3.1)
       activesupport (>= 3.1)
       bitstamp
       bitstamp
       btce (= 0.2.4)
       coinbase (= 1.2.6)
+      faraday (= 0.8.8)
       mtgox
       pony
       thor
