@@ -16,10 +16,11 @@ module RbtcArbitrage
         if @options[:verbose]
           warning = "Coinbase doesn't provide a USD balance because"
           warning << " it connects to your bank account. Be careful, "
-          warning << "because this will withdraw directly from your accounts."
+          warning << "because this will withdraw directly from your accounts"
+          warning << "when you trade live."
           logger.warn warning
         end
-        @balance ||= [interface.balance.to_f, max_float]
+        @balance ||= [max_float, max_float]
       end
 
       # Configures the client's API keys.

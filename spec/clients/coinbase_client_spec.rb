@@ -7,9 +7,8 @@ describe RbtcArbitrage::Clients::CoinbaseClient do
   it { client.exchange.should == :coinbase }
 
   describe "#balance" do
-    it "fetches the balance correctly", :vcr do
-      balance = coinbase.balance.to_f
-      expected = [balance, Float::MAX]
+    it "fetches the balance correctly" do
+      expected = [Float::MAX, Float::MAX]
       client.balance.should eql(expected)
       client.balance.each do |b|
         b.should be_a(Float)
