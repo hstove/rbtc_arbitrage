@@ -47,7 +47,8 @@ module RbtcArbitrage
       end
 
       def interface
-        @interface ||= Coinbase::Client.new(ENV['COINBASE_KEY'])
+        secret = ENV['COINBASE_SECRET'] || ''
+        @interface ||= Coinbase::Client.new(ENV['COINBASE_KEY'], secret)
       end
 
       def address

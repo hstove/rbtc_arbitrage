@@ -99,3 +99,4 @@ to trade with real accounts.
 ##### Coinbase
 
 *   COINBASE_KEY
+*   COINBASE_SECRET (optional)
