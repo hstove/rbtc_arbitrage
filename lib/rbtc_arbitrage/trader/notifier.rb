@@ -17,8 +17,8 @@ module RbtcArbitrage
         if (stathat_api_key = ENV['STATHAT_API_KEY']).present?
          options[:logger].info "Notifying #{ stathat_api_key } via stathat"
 
-         StatHat::API.ez_post_value("#{@buy_client.exchange}_to_#{@sell_client.exchange}_percent", stathat_api_key, @percent)
-         StatHat::API.ez_post_value("#{@buy_client.exchange}_to_#{@sell_client.exchange}_profit", stathat_api_key, @received - @paid)
+         StatHat::SyncAPI.ez_post_value("#{@buy_client.exchange}_to_#{@sell_client.exchange}_percent", stathat_api_key, @percent)
+         StatHat::SyncAPI.ez_post_value("#{@buy_client.exchange}_to_#{@sell_client.exchange}_profit", stathat_api_key, @received - @paid)
        end
       end
 

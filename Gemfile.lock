@@ -10,6 +10,7 @@ PATH
       faraday (= 0.8.8)
       pony
       rake (= 10.1.1)
+      stathat
       tco (= 0.1.0)
       thor
 
@@ -139,6 +140,7 @@ GEM
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
     slop (3.4.7)
+    stathat (0.1.7)
     tco (0.1.0)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
