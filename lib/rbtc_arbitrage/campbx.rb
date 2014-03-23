@@ -70,10 +70,10 @@ module CampBX
         request.set_form_data( post_data )
       end
 
-      # debug # need to test w/valid credentials
-      #puts "Sending request to #{uri}"
-      #puts "Post Data: #{post_data}"
+      make_request(http, request)
+    end
 
+    def make_request http, request
       # CampBX API: max 1 request per 500ms
       delta = Time.now - @@last
       #puts delta*1000
@@ -90,7 +90,6 @@ module CampBX
       else # HTTP ERROR
         warn "HTTP Error: + #{res.code}"
       end
-
     end
 
   end
