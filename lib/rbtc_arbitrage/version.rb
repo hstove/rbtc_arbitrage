@@ -1,3 +1,3 @@
 module RbtcArbitrage
-  VERSION = "1.4.6"
+  VERSION = "2.0.0"
 end

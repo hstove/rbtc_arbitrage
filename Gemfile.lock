@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rbtc_arbitrage (1.4.6)
+    rbtc_arbitrage (2.0.0)
       activemodel (>= 3.1)
       activesupport (>= 3.1)
       btce (= 0.2.4)
