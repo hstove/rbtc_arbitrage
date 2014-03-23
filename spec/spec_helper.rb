@@ -13,7 +13,7 @@ SimpleCov.start do
 end
 
 require 'bundler'
-Bundler.require
+Bundler.require(:default, :development)
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/support/cassettes'

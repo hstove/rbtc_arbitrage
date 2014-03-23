@@ -1,7 +1,8 @@
+require 'bundler'
+Bundler.require(:default)
 require 'thor'
 require 'mtgox'
 require_relative 'rbtc_arbitrage/campbx.rb'
-require 'bitstamp'
 require 'btce'
 require 'coinbase'
 require 'pony'

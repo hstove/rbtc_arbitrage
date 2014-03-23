@@ -23,12 +23,11 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "mtgox"
   spec.add_dependency "faraday", "0.8.8"
-  spec.add_dependency "bitstamp"
+  # spec.add_dependency "bitstamp"
   spec.add_dependency "activemodel", ">= 3.1"
   spec.add_dependency "activesupport", ">= 3.1"
   spec.add_dependency "thor"
   spec.add_dependency "btce", '0.2.4'
-  spec.add_dependency "bitstamp"
   spec.add_dependency "coinbase", '1.2.6'
   spec.add_dependency "pony"
 end
