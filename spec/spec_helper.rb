@@ -10,6 +10,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start do
   add_filter "/spec/"
   add_filter "/lib/rbtc_arbitrage/campbx.rb"
+  add_filter "/bitstamp/"
 end
 
 require 'bundler'

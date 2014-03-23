@@ -1,5 +1,8 @@
 module RbtcArbitrage
   class Trader
+    include RbtcArbitrage::TraderHelpers::Notifier
+    include RbtcArbitrage::TraderHelpers::Logger
+
     attr_reader :buy_client, :sell_client, :received
     attr_accessor :buyer, :seller, :options
 
@@ -64,14 +67,7 @@ module RbtcArbitrage
       raise SecurityError, "--live flag is false. Not executing trade." unless options[:live]
       get_balance
       if @percent > @options[:cutoff]
-        if @paid > buyer[:usd] || @options[:volume] > seller[:btc]
-          raise SecurityError, "Not enough funds. Exiting."
-        else
-          logger.info "Trading live!" if options[:verbose]
-          @buy_client.buy
-          @sell_client.sell
-          @buy_client.transfer @sell_client
-        end
+        buy_and_transfer!
       else
         logger.info "Not trading live because cutoff is higher than profit." if @options[:verbose]
       end
@@ -82,34 +78,13 @@ module RbtcArbitrage
       buyer[:price] = @buy_client.price(:buy)
       seller[:price] = @sell_client.price(:sell)
       prices = [buyer[:price], seller[:price]]
-      @paid = buyer[:price] * 1.006 * @options[:volume]
-      @received = seller[:price] * 0.994 * @options[:volume]
-      @percent = ((received/@paid - 1) * 100).round(2)
-    end
 
-    def log_info
-      lower_ex = @buy_client.exchange.to_s.capitalize
-      higher_ex = @sell_client.exchange.to_s.capitalize
-      logger.info "#{lower_ex}: $#{buyer[:price].round(2)}"
-      logger.info "#{higher_ex}: $#{seller[:price].round(2)}"
-      logger.info "buying #{@options[:volume]} btc from #{lower_ex} for $#{@paid.round(2)}"
-      logger.info "selling #{@options[:volume]} btc on #{higher_ex} for $#{@received.round(2)}"
-
-      profit_msg = "profit: $#{(@received - @paid).round(2)} (#{@percent.round(2)}%)"
-      if cutoff = @options[:cutoff]
-        profit_msg << " is #{@percent < cutoff ? 'below' : 'above'} cutoff"
-        profit_msg << " of #{cutoff}%."
-      end
-      logger.info profit_msg
+      calculate_profit
     end
 
     def get_balance
       @seller[:btc], @seller[:usd] = @sell_client.balance
       @buyer[:btc], @buyer[:usd] = @buy_client.balance
-    end
-
-    def logger
-      @options[:logger]
     end
 
     def validate_env
@@ -141,59 +116,24 @@ module RbtcArbitrage
       end
     end
 
-    def notify
-      return false unless options[:notify]
-      return false unless @percent > options[:cutoff]
-      setup_pony
+    private
 
-      options[:logger].info "Sending email to #{ENV['SENDGRID_EMAIL']}"
-      Pony.mail({
-        body: notification,
-        to: ENV['SENDGRID_EMAIL'],
-      })
+    def calculate_profit
+      @paid = buyer[:price] * 1.006 * @options[:volume]
+      @received = seller[:price] * 0.994 * @options[:volume]
+      @percent = ((received/@paid - 1) * 100).round(2)
     end
 
-    def setup_pony
-      Pony.options = {
-        from: ENV['FROM_EMAIL'] || "info@example.org",
-        subject: "rbtc_arbitrage notification",
-        via: :smtp,
-        via_options: {
-          address: 'smtp.sendgrid.net',
-          port: '587',
-          domain: 'heroku.com',
-          user_name: ENV['SENDGRID_USERNAME'],
-          password: ENV['SENDGRID_PASSWORD'],
-          authentication: :plain,
-          enable_starttls_auto: true
-        }
-      }
+    def buy_and_transfer!
+      if @paid > buyer[:usd] || @options[:volume] > seller[:btc]
+        raise SecurityError, "Not enough funds. Exiting."
+      else
+        logger.info "Trading live!" if options[:verbose]
+        @buy_client.buy
+        @sell_client.sell
+        @buy_client.transfer @sell_client
+      end
     end
 
-    def notification
-      lower_ex = @buy_client.exchange.to_s.capitalize
-      higher_ex = @sell_client.exchange.to_s.capitalize
-      <<-eos
-      Update from your friendly rbtc_arbitrage trader:
-
-      -------------------
-
-      #{lower_ex}: $#{buyer[:price].round(2)}
-      #{higher_ex}: $#{seller[:price].round(2)}
-      buying #{@options[:volume]} btc from #{lower_ex} for $#{@paid.round(2)}
-      selling #{@options[:volume]} btc on #{higher_ex} for $#{@received.round(2)}
-      profit: $#{(@received - @paid).round(2)} (#{@percent.round(2)}%)
-
-      -------------------
-
-      options:
-
-      #{options.reject{|k,v| v.is_a?(Logger)}.collect{|k,v| "#{k}: #{v.to_s}"}.join(" | ")}
-
-      -------------------
-
-      https://github.com/hstove/rbtc_arbitrage
-      eos
-    end
   end
 end
