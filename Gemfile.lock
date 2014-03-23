@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rbtc_arbitrage (2.0.0)
+    rbtc_arbitrage (2.0.1)
       activemodel (>= 3.1)
       activesupport (>= 3.1)
       btce (= 0.2.4)
@@ -11,7 +11,7 @@ PATH
       thor
 
 PATH
-  remote: ../bitstamp
+  remote: ./bitstamp
   specs:
     bitstamp (0.4.0)
       activemodel (>= 3.1)
