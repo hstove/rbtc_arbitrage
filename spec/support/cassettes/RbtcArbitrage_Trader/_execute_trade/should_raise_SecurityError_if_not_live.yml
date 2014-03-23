@@ -2,45 +2,50 @@
 http_interactions:
 - request:
     method: get
-    uri: https://data.mtgox.com/api/1/BTCUSD/ticker
+    uri: https://campbx.com/api/xticker.php
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - application/json
-      User-Agent:
-      - mtgox gem 1.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Server:
-      - nginx/1.4.4
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Powered-By:
-      - PHP/5.5.4
-      Access-Control-Allow-Origin:
-      - '*'
-      Content-Length:
-      - '1377'
-      Cache-Control:
-      - public, max-age=23
-      Expires:
-      - Fri, 13 Dec 2013 23:46:23 GMT
+      - cloudflare-nginx
       Date:
-      - Fri, 13 Dec 2013 23:46:00 GMT
+      - Sun, 23 Mar 2014 03:30:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Set-Cookie:
+      - __cfduid=d5959036b6f71a1846c956b349605ab471395545410818; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, must-revalidate, max-age=3600
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Sun, 23 Mar 2014 04:30:05 GMT
+      Cf-Ray:
+      - 10f78c819b1e012b-SJC
     body:
       encoding: UTF-8
-      string: '{"result":"success","return":{"high":{"value":"990.00000","value_int":"99000000","display":"$990.00","display_short":"$990.00","currency":"USD"},"low":{"value":"882.15864","value_int":"88215864","display":"$882.16","display_short":"$882.16","currency":"USD"},"avg":{"value":"929.35648","value_int":"92935648","display":"$929.36","display_short":"$929.36","currency":"USD"},"vwap":{"value":"930.71887","value_int":"93071887","display":"$930.72","display_short":"$930.72","currency":"USD"},"vol":{"value":"16658.49512372","value_int":"1665849512372","display":"16,658.50\u00a0BTC","display_short":"16,658.50\u00a0BTC","currency":"BTC"},"last_local":{"value":"933.00000","value_int":"93300000","display":"$933.00","display_short":"$933.00","currency":"USD"},"last_orig":{"value":"933.00000","value_int":"93300000","display":"$933.00","display_short":"$933.00","currency":"USD"},"last_all":{"value":"933.00000","value_int":"93300000","display":"$933.00","display_short":"$933.00","currency":"USD"},"last":{"value":"933.00000","value_int":"93300000","display":"$933.00","display_short":"$933.00","currency":"USD"},"buy":{"value":"923.01500","value_int":"92301500","display":"$923.02","display_short":"$923.02","currency":"USD"},"sell":{"value":"932.99500","value_int":"93299500","display":"$933.00","display_short":"$933.00","currency":"USD"},"item":"BTC","now":"1386978350330653"}}'
+      string: '{"Last Trade":"582.01","Best Bid":"598.00","Best Ask":"599.99"}'
     http_version: 
-  recorded_at: Fri, 13 Dec 2013 23:45:59 GMT
+  recorded_at: Sun, 23 Mar 2014 03:30:11 GMT
 - request:
     method: get
     uri: https://www.bitstamp.net/api/ticker/
@@ -53,41 +58,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 13 Dec 2013 23:46:01 GMT
-      Server:
-      - Apache
-      Content-Language:
-      - en
-      Expires:
-      - Fri, 13 Dec 2013 23:46:01 GMT
-      Vary:
-      - Accept-Language
-      Cache-Control:
-      - max-age=0
+      Etag:
+      - '"120627-a0-4f53dbbb126b1"'
       Last-Modified:
-      - Fri, 13 Dec 2013 23:46:01 GMT
-      Connection:
-      - close
-      Transfer-Encoding:
-      - chunked
+      - Sun, 23 Mar 2014 03:29:57 GMT
+      Content-Length:
+      - '160'
       Content-Type:
       - application/json
+      Cache-Control:
+      - max-age=10, public
+      Expires:
+      - Sun, 23 Mar 2014 03:30:21 GMT
+      Date:
+      - Sun, 23 Mar 2014 03:30:11 GMT
       Set-Cookie:
-      - incap_ses_124_99025=1AGJPcUZxAWETOnVAYq4ATmcq1IAAAAAsPOre1PyXZcqEJH1uY4Qfg==;
+      - incap_ses_209_99025=/Pt0LzC6viGfdmvjkIXmAkNVLlMAAAAAaFpHwp3YsMhz5noifqhXyg==;
         path=/; Domain=.bitstamp.net
-      - nlbi_99025=/DSMfH+W5Ew2ED96Itob8gAAAAAGzFr9JBde9Z+4ZeBXJbWF; path=/; Domain=.bitstamp.net
-      - visid_incap_99025=QgG3duHHS6OybwUjvo9t3Ticq1IAAAAAQUIPAAAAAABm3P8tzeXhQXHryTzg9Y1Y;
-        expires=Sun, 13 Dec 2015 10:19:32 GMT; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=2EcA4uXSRZ+SzOE2AsWMxENVLlMAAAAAQUIPAAAAAADDQabegou/a5tQLDR/2oR9;
+        expires=Mon, 21 Mar 2016 09:10:12 GMT; path=/; Domain=.bitstamp.net
       X-Iinfo:
-      - 5-187947047-187947137 NNNY CT(197 197 0) RT(1386978360501 172) q(0 0 4 0)
-        r(4 6) U6
+      - 10-57915944-0 0CNN RT(1395545410761 287) q(0 -1 -1 0) r(0 -1)
       X-Cdn:
       - Incapsula
     body:
       encoding: ASCII-8BIT
-      string: '{"high": "920.42", "last": "883.00", "timestamp": "1386978349", "bid":
-        "879.36", "volume": "14666.53257818", "low": "850.00", "ask": "883.00"}'
+      string: '{"high": "571.70", "last": "565.14", "timestamp": "1395545393", "bid":
+        "563.11", "vwap": "556.51", "volume": "13035.98901950", "low": "541.00", "ask":
+        "567.39"}'
     http_version: 
-  recorded_at: Fri, 13 Dec 2013 23:46:00 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Sun, 23 Mar 2014 03:30:11 GMT
+recorded_with: VCR 2.8.0

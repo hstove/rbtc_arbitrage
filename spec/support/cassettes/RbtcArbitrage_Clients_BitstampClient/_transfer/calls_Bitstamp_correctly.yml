@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://campbx.com/api/getbtcaddr.php
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Sun, 23 Mar 2014 03:35:04 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d690eee91be78c2c7e475be75dadde6551395545704073; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, must-revalidate, max-age=3600
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Sun, 23 Mar 2014 04:34:58 GMT
+      Cf-Ray:
+      - 10f793aa06040657-SJC
+    body:
+      encoding: UTF-8
+      string: "\r\n{\"Success\":\"16rQQYMTTKb9cnnSX3xYkN4hcKXoYcYURi\",\"Expiry\":3802802}"
+    http_version:
+  recorded_at: Sun, 23 Mar 2014 03:35:04 GMT
+recorded_with: VCR 2.8.0

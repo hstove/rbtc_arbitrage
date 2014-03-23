@@ -22,7 +22,7 @@ module RbtcArbitrage
       set_key opts, :notify, false
       exchange = opts[:buyer] || :bitstamp
       @buy_client = client_for_exchange(exchange)
-      exchange = opts[:seller] || :mtgox
+      exchange = opts[:seller] || :campbx
       @sell_client = client_for_exchange(exchange)
       self
     end

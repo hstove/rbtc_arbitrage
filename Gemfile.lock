@@ -7,7 +7,6 @@ PATH
       btce (= 0.2.4)
       coinbase (= 1.2.6)
       faraday (= 0.8.8)
-      mtgox
       pony
       thor
 
@@ -93,9 +92,6 @@ GEM
       i18n (~> 0.6.0)
     monkey-patch (0.0.16)
       activesupport
-    mtgox (1.1.0)
-      faraday (~> 0.8, < 0.10)
-      json (~> 1.7, >= 1.7.7)
     multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
