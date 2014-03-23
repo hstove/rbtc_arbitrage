@@ -94,7 +94,13 @@ module RbtcArbitrage
       logger.info "#{higher_ex}: $#{seller[:price].round(2)}"
       logger.info "buying #{@options[:volume]} btc from #{lower_ex} for $#{@paid.round(2)}"
       logger.info "selling #{@options[:volume]} btc on #{higher_ex} for $#{@received.round(2)}"
-      logger.info "profit: $#{(@received - @paid).round(2)} (#{@percent.round(2)}%)"
+
+      profit_msg = "profit: $#{(@received - @paid).round(2)} (#{@percent.round(2)}%)"
+      if cutoff = @options[:cutoff]
+        profit_msg << " is #{@percent < cutoff ? 'below' : 'above'} cutoff"
+        profit_msg << " of #{cutoff}%."
+      end
+      logger.info profit_msg
     end
 
     def get_balance
