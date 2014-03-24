@@ -10,11 +10,12 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start do
   add_filter "/spec/"
   add_filter "/lib/rbtc_arbitrage/campbx.rb"
+  add_filter "/bitstamp/"
 end
 
 require 'bundler'
 require './lib/rbtc_arbitrage'
-Bundler.require
+Bundler.require(:default, :development)
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/support/cassettes'

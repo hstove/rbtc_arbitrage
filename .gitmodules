@@ -1,0 +1,3 @@
+[submodule "bitstamp"]
+	path = bitstamp
+	url = https://github.com/kojnapp/bitstamp.git

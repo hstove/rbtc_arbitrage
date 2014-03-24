@@ -55,14 +55,14 @@ describe RbtcArbitrage::Trader do
 
   describe "#fetch_prices" do
     it "gets the right price set", :vcr do
-      stamp_price = CampBX::API.new.xticker["Best Ask"].to_f
-      mtgox_price = MtGox.ticker.buy
+      campbx_price = RbtcArbitrage::Clients::CampbxClient.new.price(:sell)
+      btce_price = RbtcArbitrage::Clients::BtceClient.new.price(:buy)
 
       trader.fetch_prices
 
       #allow for recent price changes
-      trader.buyer[:price].should be_within(0.02).of(stamp_price)
-      trader.seller[:price].should be_within(0.02).of(mtgox_price)
+      trader.seller[:price].should be_within(0.02).of(campbx_price)
+      trader.buyer[:price].should be_within(0.02).of(btce_price)
     end
 
     it "calculates profit and percent accurately" do
@@ -83,8 +83,8 @@ describe RbtcArbitrage::Trader do
         logger: nil,
         verbose: false,
         live: true,
-        seller: :btce,
-        buyer: :mtgox,
+        seller: :campbx,
+        buyer: :btce,
         notify: true,
       }
     }
@@ -100,8 +100,8 @@ describe RbtcArbitrage::Trader do
     end
 
     it "sets the right exchanges" do
-      trader.buy_client.should be_a(RbtcArbitrage::Clients::MtGoxClient)
-      trader.sell_client.should be_a(RbtcArbitrage::Clients::BtceClient)
+      trader.sell_client.should be_a(RbtcArbitrage::Clients::CampbxClient)
+      trader.buy_client.should be_a(RbtcArbitrage::Clients::BtceClient)
     end
 
   end

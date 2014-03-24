@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 16:52:22 GMT
+      - Mon, 24 Mar 2014 01:21:44 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d13c053a630b8468a5b9405f4b6eb1f7a1387817542464; expires=Mon, 23-Dec-2019
+      - __cfduid=d45238e17ceb6ee684e9ed3bafee828471395624103601; expires=Mon, 23-Dec-2019
         23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
@@ -38,85 +38,104 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Expires:
-      - Mon, 23 Dec 2013 17:52:21 GMT
+      - Mon, 24 Mar 2014 02:21:38 GMT
       Cf-Ray:
-      - e168fd86749012d
+      - 10ff0db785db012b-SJC
     body:
       encoding: UTF-8
-      string: '{"Last Trade":"625.01","Best Bid":"625.01","Best Ask":"637.97"}'
-    http_version: 
-  recorded_at: Mon, 23 Dec 2013 16:52:22 GMT
+      string: '{"Last Trade":"588.64","Best Bid":"581.87","Best Ask":"595.01"}'
+    http_version:
+  recorded_at: Mon, 24 Mar 2014 01:21:44 GMT
 - request:
     method: get
-    uri: https://data.mtgox.com/api/1/BTCUSD/ticker
+    uri: https://btc-e.com/api/2/btc_usd/ticker
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - application/json
-      User-Agent:
-      - mtgox gem 1.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Server:
-      - nginx/1.4.4
-      Content-Type:
-      - application/json; charset=utf-8
-      Access-Control-Allow-Origin:
-      - '*'
-      Content-Length:
-      - '1387'
-      Cache-Control:
-      - public, max-age=10
-      Expires:
-      - Mon, 23 Dec 2013 16:52:33 GMT
+      - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 16:52:23 GMT
+      - Mon, 24 Mar 2014 01:21:45 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Set-Cookie:
+      - __cfduid=dbefbb482c999a6850d15b9bd9d87616d1395624105369; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.btc-e.com; HttpOnly
+      X-Frame-Options:
+      - DENY
+      Expires:
+      - Thu, 01 Jan 1970 00:00:01 GMT
+      Cache-Control:
+      - no-cache
+      Cf-Ray:
+      - 10ff0dc288dd0701-SJC
     body:
       encoding: UTF-8
-      string: '{"result":"success","return":{"high":{"value":"685.99999","value_int":"68599999","display":"$686.00","display_short":"$686.00","currency":"USD"},"low":{"value":"630.00000","value_int":"63000000","display":"$630.00","display_short":"$630.00","currency":"USD"},"avg":{"value":"662.15756","value_int":"66215756","display":"$662.16","display_short":"$662.16","currency":"USD"},"vwap":{"value":"662.16810","value_int":"66216810","display":"$662.17","display_short":"$662.17","currency":"USD"},"vol":{"value":"12454.97895853","value_int":"1245497895853","display":"12,454.98\u00a0BTC","display_short":"12,454.98\u00a0BTC","currency":"BTC"},"last_local":{"value":"655.66600","value_int":"65566600","display":"$655.67","display_short":"$655.67","currency":"USD"},"last_orig":{"value":"68000.000","value_int":"68000000","display":"\u00a568,000","display_short":"\u00a568,000","currency":"JPY"},"last_all":{"value":"650.87621","value_int":"65087621","display":"$650.88","display_short":"$650.88","currency":"USD"},"last":{"value":"655.66600","value_int":"65566600","display":"$655.67","display_short":"$655.67","currency":"USD"},"buy":{"value":"663.55000","value_int":"66355000","display":"$663.55","display_short":"$663.55","currency":"USD"},"sell":{"value":"665.40000","value_int":"66540000","display":"$665.40","display_short":"$665.40","currency":"USD"},"item":"BTC","now":"1387817517954792"}}'
-    http_version: 
-  recorded_at: Mon, 23 Dec 2013 16:52:22 GMT
+      string: '{"ticker":{"high":577,"low":561.01001,"avg":569.005005,"vol":1400936.05639,"vol_cur":2462.82808,"last":561.882,"buy":561.882,"sell":561.288,"updated":1395624104,"server_time":1395624105}}'
+    http_version:
+  recorded_at: Mon, 24 Mar 2014 01:21:45 GMT
 - request:
     method: post
-    uri: https://data.mtgox.com/api/1/generic/info
+    uri: https://btc-e.com/tapi
+    body:
+      encoding: US-ASCII
+      string: method=getInfo&nonce=1395624105
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
   response:
     status:
       code: 200
       message: OK
     headers:
       Server:
-      - nginx/1.4.4
-      Content-Type:
-      - application/json; charset=utf-8
-      Access-Control-Allow-Origin:
-      - '*'
-      Content-Length:
-      - '1732'
-      Expires:
-      - Mon, 23 Dec 2013 16:52:23 GMT
-      Cache-Control:
-      - max-age=0, no-cache, no-store
-      Pragma:
-      - no-cache
+      - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 16:52:23 GMT
+      - Mon, 24 Mar 2014 01:21:45 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Set-Cookie:
+      - __cfduid=dda67cb1620704a4220047d5ecc0c10f71395624105706; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.btc-e.com; HttpOnly
+      X-Frame-Options:
+      - DENY
+      Expires:
+      - Thu, 01 Jan 1970 00:00:01 GMT
+      Cache-Control:
+      - no-cache
+      Cf-Ray:
+      - 10ff0dc41d990701-SJC
     body:
       encoding: UTF-8
-      string: '{"result":"success","return":{"Login":"heynk","Index":"141119","Id":"84fdd298-4386-4d7c-86c0-af74f2e0d0ec","Link":"M82141119X","Rights":["deposit","get_info","merchant","trade","withdraw"],"Language":"en_US","Created":"2012-04-07
-        13:52:16","Last_Login":"2013-10-15 20:52:29","Wallets":{"BTC":{"Balance":{"value":"0.00000133","value_int":"133","display":"0.00000133\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"},"Operations":1,"Daily_Withdraw_Limit":{"value":"100.00000000","value_int":"10000000000","display":"100.00000000\u00a0BTC","display_short":"100.00\u00a0BTC","currency":"BTC"},"Monthly_Withdraw_Limit":null,"Max_Withdraw":{"value":"100.00000000","value_int":"10000000000","display":"100.00000000\u00a0BTC","display_short":"100.00\u00a0BTC","currency":"BTC"},"Open_Orders":{"value":"0.00000000","value_int":"0","display":"0.00000000\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"}},"USD":{"Balance":{"value":"0.00000","value_int":"0","display":"$0.00000","display_short":"$0.00","currency":"USD"},"Operations":0,"Daily_Withdraw_Limit":{"value":"1000.00000","value_int":"100000000","display":"$1,000.00000","display_short":"$1,000.00","currency":"USD"},"Monthly_Withdraw_Limit":{"value":"10000.00000","value_int":"1000000000","display":"$10,000.00000","display_short":"$10,000.00","currency":"USD"},"Max_Withdraw":{"value":"1000.00000","value_int":"100000000","display":"$1,000.00000","display_short":"$1,000.00","currency":"USD"},"Open_Orders":{"value":"0.00000","value_int":"0","display":"$0.00000","display_short":"$0.00","currency":"USD"}}},"Monthly_Volume":{"value":"0.00000000","value_int":"0","display":"0.00000000\u00a0BTC","display_short":"0.00\u00a0BTC","currency":"BTC"},"Trade_Fee":0.45}}'
-    http_version: 
-  recorded_at: Mon, 23 Dec 2013 16:52:22 GMT
+      string: '{"success":1,"return":{"funds":{"usd":0,"btc":0,"ltc":0,"nmc":0,"rur":0,"eur":0,"nvc":0,"trc":0,"ppc":0,"ftc":0,"xpm":0},"rights":{"info":1,"trade":1,"withdraw":0},"transaction_count":0,"open_orders":0,"server_time":1395624105}}'
+    http_version:
+  recorded_at: Mon, 24 Mar 2014 01:21:45 GMT
 - request:
     method: post
     uri: https://campbx.com/api/myfunds.php
@@ -137,7 +156,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 16:52:24 GMT
+      - Mon, 24 Mar 2014 01:21:46 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -145,7 +164,7 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=df2c166d2cc41339f1576c03e50d91cfe1387817543781; expires=Mon, 23-Dec-2019
+      - __cfduid=da275613e0baee065fa7271f31df929a91395624106027; expires=Mon, 23-Dec-2019
         23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
@@ -154,13 +173,13 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Expires:
-      - Mon, 23 Dec 2013 17:52:22 GMT
+      - Mon, 24 Mar 2014 02:21:40 GMT
       Cf-Ray:
-      - e168fe02756012d
+      - 10ff0dc63050012b-SJC
     body:
       encoding: UTF-8
-      string: "\r\n{\"Total USD\":\"1.41\",\"Total BTC\":\"0.00790000\",\"Liquid USD\":\"1.41\",\"Liquid
-        BTC\":\"0.00790000\",\"Margin Account USD\":\"0.00\",\"Margin Account BTC\":\"0.00000000\"}"
-    http_version: 
-  recorded_at: Mon, 23 Dec 2013 16:52:23 GMT
+      string: '{"Total USD":"1.41","Total BTC":"0.00790000","Liquid USD":"1.41","Liquid
+        BTC":"0.00790000","Margin Account USD":"0.00","Margin Account BTC":"0.00000000"}'
+    http_version:
+  recorded_at: Mon, 24 Mar 2014 01:21:46 GMT
 recorded_with: VCR 2.8.0

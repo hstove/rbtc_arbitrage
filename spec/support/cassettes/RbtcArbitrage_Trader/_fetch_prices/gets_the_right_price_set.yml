@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 16:49:49 GMT
+      - Mon, 24 Mar 2014 01:13:06 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dd0db16ca7e6b42fc3eb5b46af612a9151387817388611; expires=Mon, 23-Dec-2019
+      - __cfduid=d76110a73ab8f1d70a4ca08e20e2e7a691395623585834; expires=Mon, 23-Dec-2019
         23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
@@ -38,53 +38,58 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Expires:
-      - Mon, 23 Dec 2013 17:49:47 GMT
+      - Mon, 24 Mar 2014 02:13:00 GMT
       Cf-Ray:
-      - e168c16d2920657
+      - 10ff01137a98012b-SJC
     body:
       encoding: UTF-8
-      string: '{"Last Trade":"625.01","Best Bid":"625.01","Best Ask":"637.97"}'
+      string: '{"Last Trade":"588.64","Best Bid":"581.87","Best Ask":"592.71"}'
     http_version: 
-  recorded_at: Mon, 23 Dec 2013 16:49:48 GMT
+  recorded_at: Mon, 24 Mar 2014 01:13:06 GMT
 - request:
     method: get
-    uri: https://data.mtgox.com/api/1/BTCUSD/ticker
+    uri: https://btc-e.com/api/2/btc_usd/ticker
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - application/json
-      User-Agent:
-      - mtgox gem 1.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Server:
-      - nginx/1.4.4
-      Content-Type:
-      - application/json; charset=utf-8
-      Access-Control-Allow-Origin:
-      - '*'
-      Content-Length:
-      - '1399'
-      Cache-Control:
-      - public, max-age=8
-      Expires:
-      - Mon, 23 Dec 2013 16:49:57 GMT
+      - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 16:49:49 GMT
+      - Mon, 24 Mar 2014 01:13:06 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Set-Cookie:
+      - __cfduid=df2596c95314fafd31bfb7ac290e51c271395623586272; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.btc-e.com; HttpOnly
+      X-Frame-Options:
+      - DENY
+      Expires:
+      - Thu, 01 Jan 1970 00:00:01 GMT
+      Cache-Control:
+      - no-cache
+      Cf-Ray:
+      - 10ff0116371f0701-SJC
     body:
       encoding: UTF-8
-      string: '{"result":"success","return":{"high":{"value":"685.99999","value_int":"68599999","display":"$686.00","display_short":"$686.00","currency":"USD"},"low":{"value":"630.00000","value_int":"63000000","display":"$630.00","display_short":"$630.00","currency":"USD"},"avg":{"value":"662.16647","value_int":"66216647","display":"$662.17","display_short":"$662.17","currency":"USD"},"vwap":{"value":"662.16836","value_int":"66216836","display":"$662.17","display_short":"$662.17","currency":"USD"},"vol":{"value":"12450.68479794","value_int":"1245068479794","display":"12,450.68\u00a0BTC","display_short":"12,450.68\u00a0BTC","currency":"BTC"},"last_local":{"value":"655.00000","value_int":"65500000","display":"$655.00","display_short":"$655.00","currency":"USD"},"last_orig":{"value":"489.00000","value_int":"48900000","display":"489.00\u00a0\u20ac","display_short":"489.00\u00a0\u20ac","currency":"EUR"},"last_all":{"value":"667.72950","value_int":"66772950","display":"$667.73","display_short":"$667.73","currency":"USD"},"last":{"value":"655.00000","value_int":"65500000","display":"$655.00","display_short":"$655.00","currency":"USD"},"buy":{"value":"661.50000","value_int":"66150000","display":"$661.50","display_short":"$661.50","currency":"USD"},"sell":{"value":"667.47499","value_int":"66747499","display":"$667.47","display_short":"$667.47","currency":"USD"},"item":"BTC","now":"1387817367194043"}}'
+      string: '{"ticker":{"high":577,"low":561.21503,"avg":569.107515,"vol":1379596.28313,"vol_cur":2424.76982,"last":563.988,"buy":564.989,"sell":563.988,"updated":1395623584,"server_time":1395623586}}'
     http_version: 
-  recorded_at: Mon, 23 Dec 2013 16:49:49 GMT
+  recorded_at: Mon, 24 Mar 2014 01:13:06 GMT
 - request:
     method: get
     uri: https://campbx.com/api/xticker.php
@@ -106,7 +111,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 16:49:50 GMT
+      - Mon, 24 Mar 2014 01:13:07 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -114,7 +119,7 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d67869f8544a1a1a0579be7bc107d34161387817389952; expires=Mon, 23-Dec-2019
+      - __cfduid=d9414509e184dccd66043c1662004bf651395623586779; expires=Mon, 23-Dec-2019
         23:50:00 GMT; path=/; domain=.campbx.com; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
@@ -123,51 +128,56 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Expires:
-      - Mon, 23 Dec 2013 17:49:49 GMT
+      - Mon, 24 Mar 2014 02:13:01 GMT
       Cf-Ray:
-      - e168c1f372b012d
+      - 10ff01195aaf012b-SJC
     body:
       encoding: UTF-8
-      string: '{"Last Trade":"625.01","Best Bid":"625.01","Best Ask":"637.97"}'
+      string: '{"Last Trade":"588.64","Best Bid":"581.87","Best Ask":"592.71"}'
     http_version: 
-  recorded_at: Mon, 23 Dec 2013 16:49:49 GMT
+  recorded_at: Mon, 24 Mar 2014 01:13:07 GMT
 - request:
     method: get
-    uri: https://data.mtgox.com/api/1/BTCUSD/ticker
+    uri: https://btc-e.com/api/2/btc_usd/ticker
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - application/json
-      User-Agent:
-      - mtgox gem 1.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Server:
-      - nginx/1.4.4
-      Content-Type:
-      - application/json; charset=utf-8
-      Access-Control-Allow-Origin:
-      - '*'
-      Content-Length:
-      - '1399'
-      Cache-Control:
-      - public, max-age=7
-      Expires:
-      - Mon, 23 Dec 2013 16:49:57 GMT
+      - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 16:49:50 GMT
+      - Mon, 24 Mar 2014 01:13:07 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Set-Cookie:
+      - __cfduid=de6b54b6272917ce3756f74ef16b49db41395623587505; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.btc-e.com; HttpOnly
+      X-Frame-Options:
+      - DENY
+      Expires:
+      - Thu, 01 Jan 1970 00:00:01 GMT
+      Cache-Control:
+      - no-cache
+      Cf-Ray:
+      - 10ff011decac0701-SJC
     body:
       encoding: UTF-8
-      string: '{"result":"success","return":{"high":{"value":"685.99999","value_int":"68599999","display":"$686.00","display_short":"$686.00","currency":"USD"},"low":{"value":"630.00000","value_int":"63000000","display":"$630.00","display_short":"$630.00","currency":"USD"},"avg":{"value":"662.16647","value_int":"66216647","display":"$662.17","display_short":"$662.17","currency":"USD"},"vwap":{"value":"662.16836","value_int":"66216836","display":"$662.17","display_short":"$662.17","currency":"USD"},"vol":{"value":"12450.68479794","value_int":"1245068479794","display":"12,450.68\u00a0BTC","display_short":"12,450.68\u00a0BTC","currency":"BTC"},"last_local":{"value":"655.00000","value_int":"65500000","display":"$655.00","display_short":"$655.00","currency":"USD"},"last_orig":{"value":"489.00000","value_int":"48900000","display":"489.00\u00a0\u20ac","display_short":"489.00\u00a0\u20ac","currency":"EUR"},"last_all":{"value":"667.72950","value_int":"66772950","display":"$667.73","display_short":"$667.73","currency":"USD"},"last":{"value":"655.00000","value_int":"65500000","display":"$655.00","display_short":"$655.00","currency":"USD"},"buy":{"value":"661.50000","value_int":"66150000","display":"$661.50","display_short":"$661.50","currency":"USD"},"sell":{"value":"667.47499","value_int":"66747499","display":"$667.47","display_short":"$667.47","currency":"USD"},"item":"BTC","now":"1387817367194043"}}'
+      string: '{"ticker":{"high":577,"low":561.21503,"avg":569.107515,"vol":1379596.28313,"vol_cur":2424.76982,"last":563.988,"buy":564.989,"sell":563.988,"updated":1395623586,"server_time":1395623587}}'
     http_version: 
-  recorded_at: Mon, 23 Dec 2013 16:49:49 GMT
+  recorded_at: Mon, 24 Mar 2014 01:13:07 GMT
 recorded_with: VCR 2.8.0
