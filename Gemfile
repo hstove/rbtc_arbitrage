@@ -18,4 +18,3 @@ group :development do
   gem 'hashie'
   gem 'sinatra'
 end
-gem 'bitstamp', path: './bitstamp'

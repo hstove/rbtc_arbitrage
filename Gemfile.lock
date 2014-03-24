@@ -10,15 +10,6 @@ PATH
       pony
       thor
 
-PATH
-  remote: ./bitstamp
-  specs:
-    bitstamp (0.4.0)
-      activemodel (>= 3.1)
-      activesupport (>= 3.1)
-      curb (> 0.8.1)
-      ruby-hmac (= 0.4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,7 +45,6 @@ GEM
       thor
     crack (0.4.1)
       safe_yaml (~> 0.9.0)
-    curb (0.8.5)
     diff-lcs (1.2.5)
     docile (1.1.1)
     faraday (0.8.8)
@@ -123,7 +113,6 @@ GEM
     rspec-mocks (3.0.0.beta1)
       rspec-support (= 3.0.0.beta1)
     rspec-support (3.0.0.beta1)
-    ruby-hmac (0.4.0)
     ruby_gntp (0.3.4)
     safe_yaml (0.9.7)
     simplecov (0.8.2)
@@ -158,7 +147,6 @@ PLATFORMS
 DEPENDENCIES
   activemodel (>= 3.1)
   activesupport (>= 3.1)
-  bitstamp!
   bundler (~> 1.3)
   codeclimate-test-reporter
   coveralls
