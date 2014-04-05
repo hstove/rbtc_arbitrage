@@ -1,14 +1,28 @@
 # RbtcArbitrage
 
-A Ruby gem for executing arbitrage between the MtGox and Bitstamp bitcoin exchanges.
+A Ruby gem for executing arbitrage between different Bitcoin exchanges. Supports:
+
+- Bitstamp
+- CampBX
+- BTC-E
+- Coinbase
+- ~~MtGox~~ (deprecated)
 
 ## Meta
+
+Please contribute! There are always new exchanges that could be easily supported.
+Check out the [contribution guidelines](https://github.com/hstove/rbtc_arbitrage/blob/master/CONTRIBUTING.md)
+for instructions. Earn Bitcoin for every commit:
+
+[![tip for next commit](http://tip4commit.com/projects/698.svg)](http://tip4commit.com/projects/698)
 
 [Explanation of bitcoin arbitrage](http://hankstoever.com/posts/13-Everything-you-need-to-know-about-Bitcoin-arbitrage)
 
 [Why I open sourced a bitcoin arbitrate bot](http://hankstoever.com/posts/2-Why-I-open-sourced-a-bitcoin-arbitrage-bot)
 
 I'm also creating a course on [creating your own bitcoin arbitrage bot](https://www.uludum.org/funds/2)
+
+[CHANGELOG](https://github.com/hstove/rbtc_arbitrage/releases).
 
 Donations accepted: **16BMcqf93eEpb2aWgMkJCSQQH85WzrpbdZ**
 
@@ -28,61 +42,60 @@ After installing the gem, simply run `rbtc` in the command line.
 
 #### Options
 
-- **Live**: whether you want to actually execute trades. You must have configured your API keys and bitcoin addresses through the following environment variables:
-	1. MTGOX_KEY
-	2. MTGOX_SECRET
-	2. MTGOX_ADDRESS
-	2. BITSTAMP_KEY
-	2. BITSTAMP_SECRET
-	3. BITSTAMP_ADDRESS
-	4. BITSTAMP_CLIENT_ID
-
+- **Live**: whether you want to actually execute trades. See the 'Environment
+Variable' section for the required keys.
 - **Cutoff**: the minimum profit percentage required to execute a trade. Defaults to **%2.00**.
 - **Volume**: The amount of bitcoins to trade per transaction. Defaults to **0.01** (the minimum transaction size).
-- **Buyer**: The exchange you'd like to buy bitcoins from during arbitrage. `"mtgox"` or `"bitstamp"`. Default is `bitstamp`
-- **Seller**: The exchange you'd like to sell bitcoins from during arbitrage. `"mtgox"` or `"bitstamp"`. Default is `mtgox`
+- **Buyer**: The exchange you'd like to buy bitcoins from during arbitrage. Default is `bitstamp`
+- **Seller**: The exchange you'd like to sell bitcoins from during arbitrage. Default is `campbx`
+
+Valid exchanges for the `--buyer` and `--seller` option are `bitstamp`, `campbx`,
+`btce`,and `coinbase`.
 
 #### Examples
 
+~~~
 	$ rbtc --live --cutoff 4
 	$ rbtc --cutoff 0.5
 	$ rbtc --cutoff 3 --volume 0.05
-	$ rbtc --seller bitstamp --buyer mtgox
+	$ rbtc --seller bitstamp --buyer campbx
 	$ rbtc
+~~~
 
 The output will look like this:
 
-	07/08/2013 at 10:41AM
-	Retrieving market information and balances
-	Bitstamp: $74.0
-	MtGox: $76.89
-	buying 0.01 btc from Bitstamp for $0.74
-	selling 0.01 btc on MtGox for $0.76
-	profit: $0.02 (2.77%)
+~~~
+I, [APR  5 2014  2:59:02 PM -0700#35172]  INFO -- : Fetching exchange rates
+I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : Bitstamp: $455.51
+I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : Campbx: $446.27
+I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : buying 0.01 btc at Bitstamp for $4.58
+I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : selling 0.01 btc at Campbx for $4.44
+I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : profit: $-0.15 (-3.2%) is below cutoff of 2%.
+~~~
 
-## Changelog
+### Environment Variables
 
-See [releases](https://github.com/hstove/rbtc_arbitrage/releases).
+You will need to configure the following environment variables
+to trade with real accounts.
 
-## Contributing
+##### Bitstamp
 
-### Pull Requests are welcome!
+*   BITSTAMP_KEY
+*   BITSTAMP_SECRET
+*   BITSTAMP_ADDRESS
+*   BITSTAMP_CLIENT_ID
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+##### CampBX
 
-## Adding an exchange
+- CAMPBX_KEY
+- CAMPBX_SECRET
 
-Right now there is support for only MtGox and Bitstamp, but adding support for other exchanges is dead simple. First, you'll need to create a new `client` in `lib/rbtc_arbitrage/clients`. Follow the example from the [mtgox client](https://github.com/hstove/rbtc_arbitrage/blob/master/lib/rbtc_arbitrage/clients/mtgox_client.rb). You'll need to provide custom implementations of the following methods:
+##### BTC-E
 
-- `validate_env`
-- `balance`
-- `price`
-- `trade`
-- `exchange`
-- `transfer`
+*   BTCE_KEY
+*   BTCE_SECRET
+*   BTCE_ADDRESS
 
-Make sure that the methods accept the same arguments and return similar objects. At the same time, make sure you copy the [mtgox_cient_spec](https://github.com/hstove/rbtc_arbitrage/blob/master/spec/clients/mtgox_client_spec.rb) and change it to test your client.
+##### Coinbase
+
+*   COINBASE_KEY
