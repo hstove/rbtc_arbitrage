@@ -1,5 +1,7 @@
 require 'bundler'
-Bundler.require(:default)
+Dir.chdir("#{File.dirname(__FILE__)}/../") do
+  Bundler.require(:default)
+end
 require 'thor'
 require_relative 'rbtc_arbitrage/campbx.rb'
 require 'btce'
