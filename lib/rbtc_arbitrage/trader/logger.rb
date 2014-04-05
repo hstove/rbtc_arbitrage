@@ -11,7 +11,7 @@ module RbtcArbitrage
         logger.info "#{lower_ex}: $#{color(buyer[:price].round(2))}"
         logger.info "#{higher_ex}: $#{color(seller[:price].round(2))}"
         logger.info log_string("buying", lower_ex, @paid)
-        logger.info log_string("selling", lower_ex, @received)
+        logger.info log_string("selling", higher_ex, @received)
 
         log_profit
       end
