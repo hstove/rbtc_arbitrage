@@ -49,4 +49,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "btce", '0.2.4'
   spec.add_dependency "coinbase", '1.2.6'
   spec.add_dependency "pony"
+  spec.add_dependency "tco", "0.1.0"
 end
