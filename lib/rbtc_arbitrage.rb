@@ -5,6 +5,7 @@ require_relative 'rbtc_arbitrage/campbx.rb'
 require 'btce'
 require 'coinbase'
 require 'pony'
+require 'tco'
 require_relative 'rbtc_arbitrage/client.rb'
 Dir["#{File.dirname(__FILE__)}/rbtc_arbitrage/trader/*.rb"].each { |f| require(f) }
 Dir["#{File.dirname(__FILE__)}/rbtc_arbitrage/**/*.rb"].each { |f| require(f) }
