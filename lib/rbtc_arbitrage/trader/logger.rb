@@ -8,8 +8,8 @@ module RbtcArbitrage
       def log_info
         lower_ex = @buy_client.exchange.to_s.capitalize
         higher_ex = @sell_client.exchange.to_s.capitalize
-        logger.info "#{lower_ex}: $#{color(buyer[:price].round(2))}"
-        logger.info "#{higher_ex}: $#{color(seller[:price].round(2))}"
+        logger.info "#{lower_ex} (Ask): $#{color(buyer[:price].round(2))}"
+        logger.info "#{higher_ex} (Bid): $#{color(seller[:price].round(2))}"
         logger.info log_string("buying", lower_ex, @paid)
         logger.info log_string("selling", higher_ex, @received)
 

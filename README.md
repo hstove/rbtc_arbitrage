@@ -65,12 +65,12 @@ Valid exchanges for the `--buyer` and `--seller` option are `bitstamp`, `campbx`
 The output will look like this:
 
 ~~~
-I, [APR  5 2014  2:59:02 PM -0700#35172]  INFO -- : Fetching exchange rates
-I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : Bitstamp: $455.51
-I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : Campbx: $446.27
-I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : buying 0.01 btc at Bitstamp for $4.58
-I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : selling 0.01 btc at Campbx for $4.44
-I, [APR  5 2014  2:59:13 PM -0700#35172]  INFO -- : profit: $-0.15 (-3.2%) is below cutoff of 2%.
+I, [APR  6 2014  7:14:33 AM -0700#52261]  INFO -- : Fetching exchange rates
+I, [APR  6 2014  7:14:37 AM -0700#52261]  INFO -- : Bitstamp (Ask): $455.0
+I, [APR  6 2014  7:14:37 AM -0700#52261]  INFO -- : Campbx (Bid): $455.05
+I, [APR  6 2014  7:14:37 AM -0700#52261]  INFO -- : buying 0.01 btc at Bitstamp for $4.58
+I, [APR  6 2014  7:14:37 AM -0700#52261]  INFO -- : selling 0.01 btc at Campbx for $4.52
+I, [APR  6 2014  7:14:37 AM -0700#52261]  INFO -- : profit: $-0.05 (-1.18%) is below cutoff of 2%.
 ~~~
 
 ### Environment Variables
