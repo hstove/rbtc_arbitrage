@@ -41,7 +41,7 @@ module RbtcArbitrage
       end
 
       def address
-        @address ||= interface.get_btc_address
+        @address ||= interface.get_btc_address["Success"]
       end
     end
   end

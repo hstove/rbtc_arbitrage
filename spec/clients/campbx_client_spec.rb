@@ -59,8 +59,8 @@ describe RbtcArbitrage::Clients::CampbxClient do
 
   describe "#address" do
     it "calls campbx" do
-      campbx.should_receive(:get_btc_address)
-      client.address
+      campbx.should_receive(:get_btc_address).and_return({"Success" => "xxx"})
+      client.address.should eq("xxx")
     end
   end
 end
