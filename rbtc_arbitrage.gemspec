@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["hstove@gmail.com"]
   spec.description   = %q{A gem for conducting arbitrage with Bitcoin.}
   spec.summary       = %q{A gem for conducting arbitrage with Bitcoin.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/hstove/rbtc_arbitrage"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
