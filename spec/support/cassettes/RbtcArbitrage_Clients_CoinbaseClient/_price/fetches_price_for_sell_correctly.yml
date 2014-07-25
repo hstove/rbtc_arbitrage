@@ -2,8 +2,19 @@
 http_interactions:
 - request:
     method: get
-    uri: https://coinbase.com/api/v1/prices/sell
-    headers: {}
+    uri: https://coinbase.com/api/v1/prices/sell?qty=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Access-Key:
+      - <COINBASE_KEY>
+      Access-Signature:
+      - b1923f3993e171bfdf3dd079bc22f8a02c9e43c27afbae22597d5814184c44f0
+      Access-Nonce:
+      - '1406308786559019'
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
@@ -12,7 +23,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 01:46:12 GMT
+      - Fri, 25 Jul 2014 17:19:46 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -20,37 +31,40 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d2936097f4b45fff147030c15439c297f1387763172302; expires=Mon, 23-Dec-2019
+      - __cfduid=d30db8f3bcc83e9b0563ae4d4f50c56b11406308786628; expires=Mon, 23-Dec-2019
         23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
+      - _coinbase=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTQyYjg4MWExNTQ2NjhhZmI3NzAxMzQ1OTkxMDY3Yzk1BjsAVEkiC2RldmljZQY7AEZJIhxENHNXcWZZbW9hM2dEaVh2RlZNamNkZAY7AFQ%3D--e363bc50346974c49cea60d18eb631ac2798fb83;
+        path=/; expires=Mon, 25-Jul-2016 17:19:46 GMT; secure; HttpOnly
       - request_method=GET; path=/; secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
       Status:
       - 200 OK
       Strict-Transport-Security:
       - max-age=31536000
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"f6ca8cefd54471be46d774df727e0885"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 5780757a2e6a97f8de4347b0a7d38234
-      X-Runtime:
-      - '0.264541'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Rack-Cache:
-      - miss
       Vary:
       - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 04ca0107-2aae-4345-8170-67a30073db54
+      X-Runtime:
+      - '0.201177'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       Cf-Ray:
-      - e11607274740296
+      - 14fa063c6335051a-SEA
     body:
       encoding: UTF-8
-      string: '{"subtotal":{"amount":"629.48","currency":"USD"},"fees":[{"coinbase":{"amount":"6.29","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"623.04","currency":"USD"},"amount":"623.04","currency":"USD"}'
+      string: '{"subtotal":{"amount":"601.08","currency":"USD"},"fees":[{"coinbase":{"amount":"6.01","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"594.92","currency":"USD"},"amount":"594.92","currency":"USD"}'
     http_version: 
-  recorded_at: Mon, 23 Dec 2013 01:46:12 GMT
+  recorded_at: Fri, 25 Jul 2014 17:19:46 GMT
 recorded_with: VCR 2.8.0

@@ -2,8 +2,19 @@
 http_interactions:
 - request:
     method: get
-    uri: https://coinbase.com/api/v1/prices/buy
-    headers: {}
+    uri: https://coinbase.com/api/v1/prices/buy?qty=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Access-Key:
+      - <COINBASE_KEY>
+      Access-Signature:
+      - 5ea031c544bc6321482ae1bd6551c79806cd4bb79cc3d74f34ce6380ddb738c4
+      Access-Nonce:
+      - '1406308782570980'
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
@@ -12,51 +23,59 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 01:50:02 GMT
+      - Fri, 25 Jul 2014 17:19:43 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=ddaa6e4bf7ecb198302cf54b54705b1131387763401454; expires=Mon, 23-Dec-2019
-        23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
-      - request_method=GET; path=/; secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
       Status:
       - 200 OK
       Strict-Transport-Security:
       - max-age=31536000
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"21c3685567c83fb6123bfaa4d9ea14f5"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 6f5e05003d57c4f27106b08346d40e92
-      X-Runtime:
-      - '0.231970'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Rack-Cache:
-      - miss
       Vary:
       - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - e4db8662-2753-4b12-8248-641eb7693b8d
+      X-Runtime:
+      - '0.519928'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       Cf-Ray:
-      - e11660a84d90296
+      - 14fa06239411051a-SEA
     body:
       encoding: UTF-8
-      string: '{"subtotal":{"amount":"634.03","currency":"USD"},"fees":[{"coinbase":{"amount":"6.34","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"640.52","currency":"USD"},"amount":"640.52","currency":"USD"}'
-    http_version: 
-  recorded_at: Mon, 23 Dec 2013 01:50:01 GMT
+      string: '{"subtotal":{"amount":"602.93","currency":"USD"},"fees":[{"coinbase":{"amount":"6.03","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"609.11","currency":"USD"},"amount":"609.11","currency":"USD"}'
+    http_version:
+  recorded_at: Fri, 25 Jul 2014 17:19:43 GMT
 - request:
     method: get
-    uri: https://coinbase.com/api/v1/prices/buy
-    headers: {}
+    uri: https://coinbase.com/api/v1/prices/buy?qty=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Access-Key:
+      - <COINBASE_KEY>
+      Access-Signature:
+      - 5e429c3ac24c7db7e606969f48cc393fb39c591a45f46d48364007bbc415984f
+      Access-Nonce:
+      - '1406308783565567'
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
@@ -65,51 +84,59 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 01:50:03 GMT
+      - Fri, 25 Jul 2014 17:19:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=d599c599d9a0afa96ebc108372a7338501387763402504; expires=Mon, 23-Dec-2019
-        23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
-      - request_method=GET; path=/; secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
       Status:
       - 200 OK
       Strict-Transport-Security:
       - max-age=31536000
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"21c3685567c83fb6123bfaa4d9ea14f5"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 8f1a06fc780cb3eff298c0e95b5b725b
-      X-Runtime:
-      - '0.458310'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Rack-Cache:
-      - miss
       Vary:
       - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - f628fdf9-5d1b-4bfa-a346-874f6ee42ed6
+      X-Runtime:
+      - '0.502370'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       Cf-Ray:
-      - e11661132770296
+      - 14fa0629bf33051a-SEA
     body:
       encoding: UTF-8
-      string: '{"subtotal":{"amount":"634.03","currency":"USD"},"fees":[{"coinbase":{"amount":"6.34","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"640.52","currency":"USD"},"amount":"640.52","currency":"USD"}'
-    http_version: 
-  recorded_at: Mon, 23 Dec 2013 01:50:02 GMT
+      string: '{"subtotal":{"amount":"602.93","currency":"USD"},"fees":[{"coinbase":{"amount":"6.03","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"609.11","currency":"USD"},"amount":"609.11","currency":"USD"}'
+    http_version:
+  recorded_at: Fri, 25 Jul 2014 17:19:44 GMT
 - request:
     method: get
-    uri: https://coinbase.com/api/v1/prices/sell
-    headers: {}
+    uri: https://coinbase.com/api/v1/prices/sell?qty=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Access-Key:
+      - <COINBASE_KEY>
+      Access-Signature:
+      - d85b1b9e8c7e6dea0ef3bb84b2bde44e96d768e7a398b9c34300eb1c13bc0f6f
+      Access-Nonce:
+      - '1406308784234865'
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
@@ -118,51 +145,59 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 01:50:04 GMT
+      - Fri, 25 Jul 2014 17:19:45 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=da4ea8419396ce80064daee243fa1fa351387763403732; expires=Mon, 23-Dec-2019
-        23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
-      - request_method=GET; path=/; secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
       Status:
       - 200 OK
       Strict-Transport-Security:
       - max-age=31536000
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"a2bef70e39b2d17967c8ca9791524579"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 62d3d1b1273638380afc79bd0d9d2525
-      X-Runtime:
-      - '0.224874'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Rack-Cache:
-      - miss
       Vary:
       - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 46d31e23-8f14-4aa6-ac50-377dccefbf3d
+      X-Runtime:
+      - '0.713108'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       Cf-Ray:
-      - e116618e67f0296
+      - 14fa062dff56051a-SEA
     body:
       encoding: UTF-8
-      string: '{"subtotal":{"amount":"632.52","currency":"USD"},"fees":[{"coinbase":{"amount":"6.33","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"626.04","currency":"USD"},"amount":"626.04","currency":"USD"}'
-    http_version: 
-  recorded_at: Mon, 23 Dec 2013 01:50:03 GMT
+      string: '{"subtotal":{"amount":"601.18","currency":"USD"},"fees":[{"coinbase":{"amount":"6.01","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"595.02","currency":"USD"},"amount":"595.02","currency":"USD"}'
+    http_version:
+  recorded_at: Fri, 25 Jul 2014 17:19:45 GMT
 - request:
     method: get
-    uri: https://coinbase.com/api/v1/prices/sell
-    headers: {}
+    uri: https://coinbase.com/api/v1/prices/sell?qty=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Access-Key:
+      - <COINBASE_KEY>
+      Access-Signature:
+      - 5e51b4ca5841b3d8a504bd10809838764686f1116ba96c340ccf8ad92a4e4875
+      Access-Nonce:
+      - '1406308785513824'
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
@@ -171,45 +206,42 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 23 Dec 2013 01:50:06 GMT
+      - Fri, 25 Jul 2014 17:19:46 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Set-Cookie:
-      - __cfduid=d3866b19f4121fd78614bbc73b874cb1a1387763405942; expires=Mon, 23-Dec-2019
-        23:50:00 GMT; path=/; domain=.coinbase.com; HttpOnly
-      - request_method=GET; path=/; secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Expires:
+      - '-1'
+      Pragma:
+      - no-cache
       Status:
       - 200 OK
       Strict-Transport-Security:
       - max-age=31536000
-      - max-age=31536000
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"a2bef70e39b2d17967c8ca9791524579"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - dfbf6c7596d2b6f6de5078a8d29ad4f5
-      X-Runtime:
-      - '0.267502'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Rack-Cache:
-      - miss
       Vary:
       - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - bb14f405-9d5a-4c26-a5c8-60bd0c5afab8
+      X-Runtime:
+      - '0.464737'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       Cf-Ray:
-      - e116626b2b10296
+      - 14fa0635ef94051a-SEA
     body:
       encoding: UTF-8
-      string: '{"subtotal":{"amount":"632.52","currency":"USD"},"fees":[{"coinbase":{"amount":"6.33","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"626.04","currency":"USD"},"amount":"626.04","currency":"USD"}'
-    http_version: 
-  recorded_at: Mon, 23 Dec 2013 01:50:05 GMT
+      string: '{"subtotal":{"amount":"601.18","currency":"USD"},"fees":[{"coinbase":{"amount":"6.01","currency":"USD"}},{"bank":{"amount":"0.15","currency":"USD"}}],"total":{"amount":"595.02","currency":"USD"},"amount":"595.02","currency":"USD"}'
+    http_version:
+  recorded_at: Fri, 25 Jul 2014 17:19:46 GMT
 recorded_with: VCR 2.8.0
