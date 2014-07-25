@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/kojnapp/bitstamp.git
+  revision: aa6d572d1796a9fdae49220304c5cad9c4d058ee
+  ref: aa6d572d1796a9fdae49220304c5cad9c4d058ee
+  specs:
+    bitstamp (0.4.0)
+      activemodel (>= 3.1)
+      activesupport (>= 3.1)
+      curb (> 0.8.1)
+      ruby-hmac (= 0.4.0)
+
 PATH
   remote: .
   specs:
@@ -12,15 +23,6 @@ PATH
       rake (= 10.1.1)
       tco (= 0.1.0)
       thor
-
-PATH
-  remote: ./bitstamp
-  specs:
-    bitstamp (0.4.0)
-      activemodel (>= 3.1)
-      activesupport (>= 3.1)
-      curb (> 0.8.1)
-      ruby-hmac (= 0.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -57,7 +59,7 @@ GEM
       thor
     crack (0.4.1)
       safe_yaml (~> 0.9.0)
-    curb (0.8.5)
+    curb (0.8.6)
     diff-lcs (1.2.5)
     docile (1.1.1)
     faraday (0.8.8)
