@@ -1,13 +1,13 @@
 language: ruby
 rvm:
-- 2.1.0
+- 2.1.1
 - 2.0.0
 - 1.9.3
 - ruby-head
 
 matrix:
   allow_failures:
-    - rvm: 2.1.0
+    - rvm: 2.1.1
     - rvm: ruby-head
 env:
   global:
