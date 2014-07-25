@@ -17,5 +17,5 @@ group :development do
   gem 'codeclimate-test-reporter'
   gem 'hashie'
   gem 'sinatra'
+  gem 'bitstamp', github: 'kojnapp/bitstamp', ref: 'aa6d572d1796a9fdae49220304c5cad9c4d058ee'
 end
-gem 'bitstamp', path: './bitstamp'
