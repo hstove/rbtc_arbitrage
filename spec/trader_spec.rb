@@ -274,6 +274,9 @@ describe RbtcArbitrage::Trader do
       trader.buyer[:price] = 1
       trader.seller[:price] = 1
 
+      ENV['SENDGRID_EMAIL'] ||= 'something'
+      ENV['STATHAT_API_KEY'] = nil
+
       trader.options[:logger].should_receive(:info)
       Pony.should_receive(:mail).with({
         to: ENV['SENDGRID_EMAIL'],
@@ -282,6 +285,25 @@ describe RbtcArbitrage::Trader do
 
       trader.notify
     end
+
+    it 'calls StatHat when notify == true' do
+      trader.options[:notify] = true
+      trader.instance_variable_set :@percent, 3
+      trader.instance_variable_set :@paid, 5
+      trader.instance_variable_set :@received, 6
+      trader.buyer[:price] = 1
+      trader.seller[:price] = 1
+
+      ENV['STATHAT_API_KEY'] = '1234'
+      ENV['SENDGRID_EMAIL'] = nil
+
+      trader.options[:logger].should_receive(:info)
+      StatHat::SyncAPI.should_receive(:ez_post_value).with("#{trader.buy_client.exchange}_to_#{trader.sell_client.exchange}_percent", ENV['STATHAT_API_KEY'], 3).ordered
+      StatHat::SyncAPI.should_receive(:ez_post_value).with("#{trader.buy_client.exchange}_to_#{trader.sell_client.exchange}_profit", ENV['STATHAT_API_KEY'], 1).ordered
+
+      trader.notify
+    end
+
   end
 
   describe "#setup_pony" do
