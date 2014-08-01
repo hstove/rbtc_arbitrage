@@ -24,6 +24,7 @@ VCR.configure do |c|
   c.ignore_request do |request|
     # true
   end
+  c.filter_sensitive_data("<COINBASE_KEY>") { ENV['COINBASE_KEY'] }
   c.configure_rspec_metadata!
 end
 
