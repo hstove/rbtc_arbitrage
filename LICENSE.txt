@@ -1,4 +1,4 @@
-Copyright (c) 2013 Hank Stoever
+Copyright (c) 2014 Hank Stoever
 
 MIT License
 
