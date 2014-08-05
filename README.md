@@ -121,3 +121,7 @@ client.address # for deposits
 coinbase = RbtcArbitrage::Clients::CoinbaseClient.new
 client.transfer coinbase.address
 ~~~
+
+## License
+
+[Available here](LICENSE.txt)
