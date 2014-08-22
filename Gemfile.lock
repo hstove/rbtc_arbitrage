@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rbtc_arbitrage (2.5.0.rc1)
+    rbtc_arbitrage (2.4.2.rc1)
       activemodel (~> 4.0)
       activesupport (~> 4.0)
       bitstamp-rbtc-arbitrage (= 0.4.0)
