@@ -1,6 +1,8 @@
 require 'simplecov'
 require 'coveralls'
 require 'codeclimate-test-reporter'
+require 'bundler'
+Bundler.require(:default, :development)
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
@@ -13,8 +15,7 @@ SimpleCov.start do
   add_filter "/bitstamp/"
 end
 
-require 'bundler'
-Bundler.require(:default, :development)
+Dotenv.load
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/support/cassettes'

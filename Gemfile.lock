@@ -2,13 +2,14 @@ PATH
   remote: .
   specs:
     rbtc_arbitrage (2.4.2)
-      activemodel (>= 3.1)
-      activesupport (>= 3.1)
-      bitstamp-rbtc-arbitrage
+      activemodel (~> 4.0)
+      activesupport (~> 4.0)
+      bitstamp-rbtc-arbitrage (= 0.4.0)
       btce (= 0.2.4)
       bundler (~> 1.3)
       coinbase (= 2.1.0)
       faraday (= 0.8.8)
+      mail (= 2.6.1)
       pony (= 1.10)
       rake (= 10.1.1)
       stathat (= 0.1.7)
@@ -63,6 +64,9 @@ GEM
     curb (0.8.6)
     diff-lcs (1.2.5)
     docile (1.1.1)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
@@ -172,6 +176,7 @@ DEPENDENCIES
   activesupport (>= 3.1)
   codeclimate-test-reporter
   coveralls
+  dotenv
   guard
   guard-rspec
   hashie

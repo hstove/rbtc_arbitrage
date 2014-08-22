@@ -15,4 +15,5 @@ group :development do
   gem 'codeclimate-test-reporter'
   gem 'hashie'
   gem 'sinatra'
+  gem 'dotenv'
 end
