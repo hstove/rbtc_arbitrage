@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rbtc_arbitrage (2.4.1)
+    rbtc_arbitrage (2.4.2)
       activemodel (>= 3.1)
       activesupport (>= 3.1)
       bitstamp-rbtc-arbitrage
@@ -9,11 +9,12 @@ PATH
       bundler (~> 1.3)
       coinbase (= 2.1.0)
       faraday (= 0.8.8)
-      pony
+      pony (= 1.10)
       rake (= 10.1.1)
-      stathat
+      stathat (= 0.1.7)
       tco (= 0.1.0)
-      thor
+      thor (= 0.18.1)
+      tzinfo (= 0.3.39)
 
 GEM
   remote: https://rubygems.org/
