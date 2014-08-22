@@ -23,14 +23,15 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rake", "10.1.1"
 
   spec.add_dependency "faraday", "0.8.8"
-  spec.add_dependency "activemodel", ">= 3.1"
-  spec.add_dependency "activesupport", ">= 3.1"
+  spec.add_dependency "activemodel", "~> 4.0"
+  spec.add_dependency "activesupport", "~> 4.0"
   spec.add_dependency "thor", '0.18.1'
   spec.add_dependency "btce", '0.2.4'
   spec.add_dependency "stathat", '0.1.7'
   spec.add_dependency "coinbase", '2.1.0'
   spec.add_dependency "pony", '1.10'
   spec.add_dependency "tco", "0.1.0"
-  spec.add_dependency "bitstamp-rbtc-arbitrage"
+  spec.add_dependency "bitstamp-rbtc-arbitrage", "0.4.0"
   spec.add_dependency "tzinfo", '0.3.39'
+  spec.add_dependency "mail", "2.6.1"
 end
