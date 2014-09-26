@@ -9,10 +9,12 @@
     ],
     "addons": [
         "scheduler",
-        "sendgrid"
+        "sendgrid",
+        "papertrail"
     ],
     "env": {
         "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-ruby",
+        "SENDGRID_EMAIL": "youremail@example.com",
         "BITSTAMP_CLIENT_ID": "CHANGE_ME",
         "BITSTAMP_KEY": "CHANGE_ME",
         "BITSTAMP_SECRET": "CHANGE_ME",
