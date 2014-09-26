@@ -7,9 +7,6 @@
         "bitcoin",
         "ruby"
     ],
-    "scripts": {
-        "postdeploy": ""
-    },
     "addons": [
         "scheduler",
         "sendgrid"
