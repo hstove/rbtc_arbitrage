@@ -1,0 +1,20 @@
+{
+    "name": "rbtc_arbitrage",
+    "description": "A Bitcoin arbitrage bot",
+    "website": "https://github.com/hstove/rbtc_arbitrage",
+    "repository": "https://github.com/hstove/rbtc_arbitrage",
+    "keywords": [
+        "bitcoin",
+        "ruby"
+    ],
+    "scripts": {
+        "postdeploy": ""
+    },
+    "addons": [
+        "scheduler",
+        "sendgrid"
+    ],
+    "env": {
+        "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-ruby"
+    }
+}
