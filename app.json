@@ -12,6 +12,17 @@
         "sendgrid"
     ],
     "env": {
-        "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-ruby"
+        "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-ruby",
+        "BITSTAMP_CLIENT_ID": "CHANGE_ME",
+        "BITSTAMP_KEY": "CHANGE_ME",
+        "BITSTAMP_SECRET": "CHANGE_ME",
+        "BITSTAMP_ADDRESS": "CHANGE_ME",
+        "CAMPBX_KEY": "CHANGE_ME",
+        "CAMPBX_SECRET": "CHANGE_ME",
+        "BTCE_KEY": "CHANGE_ME",
+        "BTCE_SECRET": "CHANGE_ME",
+        "BTCE_ADDRESS": "CHANGE_ME",
+        "COINBASE_KEY": "CHANGE_ME",
+        "COINBASE_SECRET": "CHANGE_ME"
     }
 }
